@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { parsejwt } from '../services/Auth';
 
 import banner_login from '../assets/img/banner_login.svg'
+import logo_login from '../assets/img/logo-login.svg'
 
 import '../assets/css/login.css'
 
@@ -54,19 +55,24 @@ export default class Login extends Component {
     }
 
 
-    render(){
-        return(
+    render() {
+        return (
             <div className="container_tela">
                 <div className="banner_login">
-                    <img src={banner_login} alt="Moça andando de bicicleta" />
+                    <div className="box_img">
+                        <img src={banner_login} alt="Moça andando de bicicleta" />
+                    </div>
                 </div>
-                <form onSubmit={this.efetuarlogin}>
-                    <input name="email" type="text" placeholder="Email" className="input_login" value={this.state.email} onChange={this.atualizaStateCampo}/>
-                    <input name="senha" type="password" placeholder="Senha" className="input_login" value={this.state.senha} onChange={this.atualizaStateCampo}/>
-                    <span className="Mensagem_erro">{this.state.MensagemErro}</span>
-                    {
-                        this.state.isLoading === true ? <button disabled className="btn_login">Entrando ...</button> : <button type='submit'>Entrar</button> 
-                    }               
+                <form onSubmit={this.efetuarlogin} className="box_form">
+                    <img src={logo_login} alt="" />
+                    <div className="box_inputs">
+                        <input name="email" type="text" placeholder="Email" className="input_login" value={this.state.email} onChange={this.atualizaStateCampo} />
+                        <input name="senha" type="password" placeholder="Senha" className="input_login" value={this.state.senha} onChange={this.atualizaStateCampo} />
+                        <span className="Mensagem_erro">{this.state.MensagemErro}</span>
+                        {
+                            this.state.isLoading === true ? <button disabled className="btn_login">Entrando ...</button> : <button type='submit' className="btn_login">Login</button>
+                        }
+                    </div>
                 </form>
             </div>
         )
