@@ -64,10 +64,19 @@ export default class Login extends Component {
                     </div>
                 </div>
                 <form onSubmit={this.efetuarlogin} className="box_form">
-                    <img src={logo_login} alt="" />
+                    <img src={logo_login} alt="A logo do nosso site" />
                     <div className="box_inputs">
+
+                        <div className="box_input">
+                        <label for="Email" className="label_input">Email:</label>
                         <input name="email" type="text" placeholder="Email" className="input_login" value={this.state.email} onChange={this.atualizaStateCampo} />
+                        </div>
+
+                        <div className="box_input">
+                        <label for="pass" className="label_input">Senha:</label>
                         <input name="senha" type="password" placeholder="Senha" className="input_login" value={this.state.senha} onChange={this.atualizaStateCampo} />
+                        </div>
+
                         <span className="Mensagem_erro">{this.state.MensagemErro}</span>
                         {
                             this.state.isLoading === true ? <button disabled className="btn_login">Entrando ...</button> : <button type='submit' className="btn_login">Login</button>
