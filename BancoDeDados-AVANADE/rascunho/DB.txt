@@ -34,8 +34,8 @@ VALUES
 (2,'Leonardo Souza de Castro','leonardo@gmail.com','leonardo123','03-06-2005',00000000003)
 (2,'Luiz Felipe Vera Cruz','luiz@gmail.com','luiz123','03-07-2002',00000000004)
 (2,'Colin Lucas Batista Beluco','colin@gmail.com','colin223','23-09-2004',00000000005)
-
 GO
+
 
 
 
@@ -67,6 +67,19 @@ CREATE TABLE reservas(
 );
 GO
 
+INSERT INTO reservas(idUsuario,idVaga,abreTrava,fechaTrava,preco,statusPagamento)
+VALUES
+	(5,2,08:00:00.0000000,10:00:00.0000000,10.00,1),
+	(4,4,10h00,12h00,10.00,1),
+	(3,6,12h00,14h00,10.00,1),
+	(2,8,14h00,16h00,10.00,2),
+	(1,10,16h00,18h00,10.00,2);
+GO
+
+
+
+
+
 
 -- BICICLETARIOS 
 CREATE TABLE bicicletarios(
@@ -84,7 +97,23 @@ GO
 
 INSERT INTO bicicletarios(nome,rua,numero,bairro,cidade,cep,horarioAberto,horarioFechado)
 VALUES
-	('BICICLETARIO SENAI INFORMATICA','Barão de Limeira','Campo Limpo','São Paulo','01202-001','06:00','00:00')
-	('Bicicletário Sesi Vila Leopoldina	Weber',400,'bairro dois','São Paulo','22222-222','24-03-2022-06-00-30','24-03-2022-22-00-30')
+('Bicicletário Escola Senai de informática','Alamenda',200,'bairro um','São Paulo','11111111','24-03-2022-06-00-30','24-03-2022-00-30-00'),
+('Bicicletário Sesi Vila Leopoldina	Weber','teste',400,'bairro dois','São Paulo','22222222','24-03-2022-06-00-30','24-03-2022-00-30-00'),
+('Bicicletário Sesi Osasco Calçadão','teste',600,'bairro tres','São Paulo','33333333','24-03-2022-06-00-30','24-03-2022-00-30-00');
 GO
 
+
+
+
+
+
+
+
+
+tabela de historico ou tabela
+
+tabela bicicletarios add coluna latitude longitude 
+
+formik + yup
+
+prestar atenção no tempo

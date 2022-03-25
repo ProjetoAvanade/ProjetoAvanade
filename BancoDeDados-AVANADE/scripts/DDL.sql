@@ -62,18 +62,16 @@ GO;
 -- BICICLETARIOS 
 CREATE TABLE bicicletarios(
 	idBicicletario INT PRIMARY KEY IDENTITY,
-	nome VARCHAR(30) NOT NULL,
+	nome VARCHAR(60) NOT NULL,
 	rua VARCHAR(50) NOT NULL,
 	numero INT,
 	bairro VARCHAR(20) NOT NULL,
 	cidade VARCHAR(40) NOT NULL,
 	cep VARCHAR(10) NOT NULL,
-	horarioAberto DATETIME,
-	horarioFechado DATETIME,
+	horarioAberto TIME,
+	horarioFechado TIME,
 );
 GO
 
 SELECT * FROM bicicletarios
 GO;
-
-

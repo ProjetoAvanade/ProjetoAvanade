@@ -22,9 +22,9 @@ GO
 --BICICLETARIO
 INSERT INTO bicicletarios(nome,rua,numero,bairro,cidade,cep,horarioAberto,horarioFechado)
 VALUES
-('Bicicletário Alameda','Alamenda',200,'bairro um','São Paulo','11111111','24-03-2022-06-00-30','25-03-2022-00-30-00'),
-('Bicicletário Sesi Vila Leopoldina	Weber','teste',400,'bairro dois','São Paulo','22222222','24-03-2022-06-00-30','25-03-2022-00-30-00'),
-('Bicicletário Sesi Osasco Calçadão','teste',600,'bairro tres','São Paulo','33333333','24-03-2022-06-00-30','25-03-2022-00-30-00');
+('Bicicletário Alameda','Alamenda',200,'bairro um','São Paulo','11111111','05:00:00.0000000', '23:59:59.9999999'),
+('Bicicletário Sesi Vila Leopoldina','Weber',400,'bairro dois','São Paulo','22222222','05:00:00.0000000','23:59:59.9999999'),
+('Bicicletário Sesi Osasco','Calçadão',600,'bairro tres','São Paulo','33333333','05:00:00.0000000','23:59:59.9999999');
 GO
 
 
