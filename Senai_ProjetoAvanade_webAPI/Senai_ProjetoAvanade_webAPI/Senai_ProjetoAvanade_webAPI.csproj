@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <Folder Include="Controllers\" />
+    <Folder Include="Contexts\" />
   </ItemGroup>
 
 	<PropertyGroup>
