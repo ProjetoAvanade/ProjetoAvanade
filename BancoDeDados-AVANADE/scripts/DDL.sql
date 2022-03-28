@@ -67,6 +67,8 @@ CREATE TABLE bicicletarios(
 	numero INT,
 	bairro VARCHAR(20) NOT NULL,
 	cidade VARCHAR(40) NOT NULL,
+	longitude VARCHAR(10),
+	latitude VARCHAR(10),
 	cep VARCHAR(10) NOT NULL,
 	horarioAberto TIME,
 	horarioFechado TIME,
