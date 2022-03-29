@@ -1,4 +1,5 @@
-﻿using Senai_ProjetoAvanade_webAPI.Domains;
+﻿using Senai_ProjetoAvanade_webAPI.Contexts;
+using Senai_ProjetoAvanade_webAPI.Domains;
 using Senai_ProjetoAvanade_webAPI.Interfaces;
 using Senai_ProjetoAvanade_webAPI.Utils;
 using System;
@@ -8,22 +9,25 @@ using System.Threading.Tasks;
 
 namespace Senai_ProjetoAvanade_webAPI.Repositories
 {
-    public class LoginRepository : IUsuarioRepository
+    public class UsuarioRepository : IUsuarioRepository
     {
+
+        AvanadeContext ctx = new AvanadeContext();
+
         public Usuario Login(string email, string senha)
         {
-            var usuario = ctx.Usuario.FirstOrDefault(u => u.email == email);
+            var usuario = ctx.Usuarios.FirstOrDefault(u => u.Email == email);
 
             if (usuario != null)
             {
-                if (usuario.senha.Length < 32)
+                if (usuario.Senha.Length < 32)
                 {
-                    usuario.senha = Crypto.Gerar_Hash(usuario.senha);
+                    usuario.Senha = Crypto.Gerar_Hash(usuario.Senha);
                     ctx.Usuarios.Update(usuario);
                     ctx.SaveChanges();
                 }
 
-                bool comparado = Crypto.Comparar(senha, usuario.senha);
+                bool comparado = Crypto.Comparar(senha, usuario.Senha);
 
                 if (comparado == true)
                 {

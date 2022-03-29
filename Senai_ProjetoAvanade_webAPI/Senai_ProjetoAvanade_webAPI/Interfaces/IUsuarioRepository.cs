@@ -15,5 +15,7 @@ namespace Senai_ProjetoAvanade_webAPI.Interfaces
         /// <param name="senha">Senha inserida pelo usuario para comparção</param>
         /// <returns>Retorna um usuario caso os valores recebidos sejam semelhantes aos do banco de dados.</returns>
         Usuario Login(string email, string senha);
+
+
     }
 }

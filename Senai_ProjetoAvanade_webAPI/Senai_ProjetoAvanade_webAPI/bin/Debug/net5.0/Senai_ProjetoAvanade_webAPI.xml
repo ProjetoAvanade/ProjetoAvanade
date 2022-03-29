@@ -4,5 +4,20 @@
         <name>Senai_ProjetoAvanade_webAPI</name>
     </assembly>
     <members>
+        <member name="M:Senai_ProjetoAvanade_webAPI.Controllers.LoginController.Login(Senai_ProjetoAvanade_webAPI.ViewModels.loginViewModel)">
+            <summary>
+            Método responsavel por fazer login no sistema
+            </summary>
+            <param name="login">Objeto do tipo Login com Email e Senha</param>
+            <returns>Usuario com esse email e senha</returns>
+        </member>
+        <member name="M:Senai_ProjetoAvanade_webAPI.Interfaces.IUsuarioRepository.Login(System.String,System.String)">
+            <summary>
+            Metodo responsavel pelo login do usuario
+            </summary>
+            <param name="email">Email inserido pelo usuario para comparacao</param>
+            <param name="senha">Senha inserida pelo usuario para comparção</param>
+            <returns>Retorna um usuario caso os valores recebidos sejam semelhantes aos do banco de dados.</returns>
+        </member>
     </members>
 </doc>

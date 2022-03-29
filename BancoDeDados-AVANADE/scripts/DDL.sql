@@ -20,7 +20,7 @@ CREATE TABLE usuarios (
 	idTipoUsuario INT FOREIGN KEY REFERENCES tipoUsuario(idTipoUsuario),
 	nomeUsuario VARCHAR(50) NOT NULL,
 	email VARCHAR(70) UNIQUE NOT NULL,
-	senha VARCHAR(20) NOT NULL,
+	senha VARCHAR(100) NOT NULL,
 	dataNascimento DATE NOT NULL,
 	cpf CHAR(11) UNIQUE NOT NULL,
 	pontos BIT DEFAULT 0,
@@ -30,6 +30,25 @@ GO
 
 
 SELECT * FROM usuarios
+GO;
+
+-- BICICLETARIOS 
+CREATE TABLE bicicletarios(
+	idBicicletario INT PRIMARY KEY IDENTITY,
+	nome VARCHAR(60) NOT NULL,
+	rua VARCHAR(50) NOT NULL,
+	numero INT,
+	bairro VARCHAR(20) NOT NULL,
+	cidade VARCHAR(40) NOT NULL,
+	longitude VARCHAR(10),
+	latitude VARCHAR(10),
+	cep VARCHAR(10) NOT NULL,
+	horarioAberto TIME,
+	horarioFechado TIME,
+);
+GO
+
+SELECT * FROM bicicletarios
 GO;
 
 -- VAGAS
@@ -59,21 +78,4 @@ GO
 SELECT * FROM reservas
 GO;
 
--- BICICLETARIOS 
-CREATE TABLE bicicletarios(
-	idBicicletario INT PRIMARY KEY IDENTITY,
-	nome VARCHAR(60) NOT NULL,
-	rua VARCHAR(50) NOT NULL,
-	numero INT,
-	bairro VARCHAR(20) NOT NULL,
-	cidade VARCHAR(40) NOT NULL,
-	longitude VARCHAR(10),
-	latitude VARCHAR(10),
-	cep VARCHAR(10) NOT NULL,
-	horarioAberto TIME,
-	horarioFechado TIME,
-);
-GO
 
-SELECT * FROM bicicletarios
-GO;
