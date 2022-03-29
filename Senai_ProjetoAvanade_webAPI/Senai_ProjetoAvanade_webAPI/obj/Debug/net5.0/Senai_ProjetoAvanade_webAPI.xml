@@ -11,6 +11,20 @@
             <param name="login">Objeto do tipo Login com Email e Senha</param>
             <returns>Usuario com esse email e senha</returns>
         </member>
+        <member name="M:Senai_ProjetoAvanade_webAPI.Controllers.UsuarioController.Cadastrar(Senai_ProjetoAvanade_webAPI.Domains.Usuario)">
+            <summary>
+            Método para novos usuarios poderem se cadastrar
+            </summary>
+            <param name="usuarionovo">Objeto do tipo usuario que vai ser cadastrado</param>
+            <returns></returns>
+        </member>
+        <member name="M:Senai_ProjetoAvanade_webAPI.Controllers.UsuarioController.Buscar(System.Int32)">
+            <summary>
+            Método para buscar informações de um usuario especifico
+            </summary>
+            <param name="id">Id que sera usado para comparacao</param>
+            <returns>Usuario com o id igual ao enviado</returns>
+        </member>
         <member name="M:Senai_ProjetoAvanade_webAPI.Interfaces.IUsuarioRepository.Login(System.String,System.String)">
             <summary>
             Metodo responsavel pelo login do usuario
@@ -18,6 +32,12 @@
             <param name="email">Email inserido pelo usuario para comparacao</param>
             <param name="senha">Senha inserida pelo usuario para comparção</param>
             <returns>Retorna um usuario caso os valores recebidos sejam semelhantes aos do banco de dados.</returns>
+        </member>
+        <member name="M:Senai_ProjetoAvanade_webAPI.Interfaces.IUsuarioRepository.Cadastrar(Senai_ProjetoAvanade_webAPI.Domains.Usuario)">
+            <summary>
+            Método de cadastro de usuario
+            </summary>
+            <param name="usuarionovo">Novo objeto do tipo usuario para cadastro</param>
         </member>
     </members>
 </doc>

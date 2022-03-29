@@ -14,6 +14,26 @@ namespace Senai_ProjetoAvanade_webAPI.Repositories
 
         AvanadeContext ctx = new AvanadeContext();
 
+        public Usuario BuscarId(int id)
+        {
+            return ctx.Usuarios
+                .Select (c => new Usuario
+                {
+                    IdTipoUsuario = c.IdTipoUsuario,
+                    NomeUsuario =c.NomeUsuario
+                })
+             
+             .FirstOrDefault(c => c.IdUsuario == id);
+             
+        }
+
+        public void Cadastrar(Usuario usuarionovo)
+        {
+            ctx.Usuarios.Add(usuarionovo);
+
+            ctx.SaveChanges();
+        }
+
         public Usuario Login(string email, string senha)
         {
             var usuario = ctx.Usuarios.FirstOrDefault(u => u.Email == email);

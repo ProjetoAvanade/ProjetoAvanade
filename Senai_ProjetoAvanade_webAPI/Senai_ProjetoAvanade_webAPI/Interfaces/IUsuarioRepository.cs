@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Senai_ProjetoAvanade_webAPI.Interfaces
 {
-    interface IUsuarioRepository
+    public interface IUsuarioRepository
     {
         /// <summary>
         /// Metodo responsavel pelo login do usuario
@@ -16,6 +16,12 @@ namespace Senai_ProjetoAvanade_webAPI.Interfaces
         /// <returns>Retorna um usuario caso os valores recebidos sejam semelhantes aos do banco de dados.</returns>
         Usuario Login(string email, string senha);
 
+        /// <summary>
+        /// Método de cadastro de usuario
+        /// </summary>
+        /// <param name="usuarionovo">Novo objeto do tipo usuario para cadastro</param>
+        void Cadastrar(Usuario usuarionovo);
 
+        Usuario BuscarId(int id);
     }
 }
