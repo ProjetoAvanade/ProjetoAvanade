@@ -16,14 +16,19 @@ namespace Senai_ProjetoAvanade_webAPI.Repositories
 
         public Usuario BuscarId(int id)
         {
-            return ctx.Usuarios
-                .Select (c => new Usuario
-                {
-                    IdTipoUsuario = c.IdTipoUsuario,
-                    NomeUsuario =c.NomeUsuario
-                })
-             
-             .FirstOrDefault(c => c.IdUsuario == id);
+            Usuario usuariobuscado = ctx.Usuarios.Select(U => new Usuario()
+            {
+               NomeUsuario = U.NomeUsuario,
+               IdTipoUsuario = U.IdTipoUsuario,
+               DataNascimento = U.DataNascimento,
+               Pontos = U.Pontos,
+               Saldo = U.Saldo,
+               IdUsuario = U.IdUsuario
+            })
+
+                .FirstOrDefault(c => c.IdUsuario == id);
+
+            return usuariobuscado;
              
         }
 

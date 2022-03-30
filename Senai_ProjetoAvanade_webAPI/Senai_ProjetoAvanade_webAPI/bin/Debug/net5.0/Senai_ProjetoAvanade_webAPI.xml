@@ -25,6 +25,13 @@
             <param name="id">Id que sera usado para comparacao</param>
             <returns>Usuario com o id igual ao enviado</returns>
         </member>
+        <member name="M:Senai_ProjetoAvanade_webAPI.Controllers.VagasController.ListarTodas(System.Int32)">
+            <summary>
+            Método responsavel por listar todas as vagas de um bicicletario responsavel
+            </summary>
+            <param name="id">id do bicicletario especifico</param>
+            <returns>Uma lista com as vagas do bicicletario</returns>
+        </member>
         <member name="M:Senai_ProjetoAvanade_webAPI.Interfaces.IUsuarioRepository.Login(System.String,System.String)">
             <summary>
             Metodo responsavel pelo login do usuario
@@ -38,6 +45,13 @@
             Método de cadastro de usuario
             </summary>
             <param name="usuarionovo">Novo objeto do tipo usuario para cadastro</param>
+        </member>
+        <member name="M:Senai_ProjetoAvanade_webAPI.Interfaces.IVagasRepository.ListarTodas(System.Int32)">
+            <summary>
+            Métodos de listar todas as vagas de um bicicletário especifico
+            </summary>
+            <param name="id">id do bicicletario</param>
+            <returns>Uma lista de vagas sobre um bicicletario especifico</returns>
         </member>
     </members>
 </doc>

@@ -23,7 +23,7 @@ CREATE TABLE usuarios (
 	senha VARCHAR(100) NOT NULL,
 	dataNascimento DATE NOT NULL,
 	cpf CHAR(11) UNIQUE NOT NULL,
-	pontos BIT DEFAULT 0,
+	pontos INT,
 	saldo SMALLMONEY
 );
 GO
