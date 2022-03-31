@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Senai_ProjetoAvanade_webAPI.Interfaces;
 using Senai_ProjetoAvanade_webAPI.Repositories;
+using Senai_ProjetoAvanade_webAPI.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +33,27 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
             try
             {
                 return Ok(_vagasRepository.ListarTodas(id));
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex);
+            }
+        }
+
+        /// <summary>
+        /// Metodo responsavel pela atualizacao do status de uma vaga
+        /// </summary>
+        /// <param name="id">Id da vaga a ser buscada</param>
+        /// <param name="status_novo">Novo valor para o status dessa vaga</param>
+        [HttpPut("{id}")]
+        public IActionResult AtualizarStatusVaga(int id, vagasViewModel status_novo)
+        {
+            try
+            {
+                _vagasRepository.Atualizar(id, status_novo);
+
+                return StatusCode(204);
             }
             catch (Exception ex)
             {

@@ -22,6 +22,11 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
             _bicicletarioRepository = new BicicletarioRepository();
         }
 
+        /// <summary>
+        /// Metodo responsave pelo cadastro de novos bicicletarios
+        /// </summary>
+        /// <param name="bicicletarionovo">Novo bicicletario a ser cadastrado</param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Cadastrar(Bicicletario bicicletarionovo)
         {
@@ -39,6 +44,10 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
             }
         }
 
+        /// <summary>
+        /// Metodo responsavel pela listagem de todos os bicicletarios
+        /// </summary>
+        /// <returns>Uma lista de Bicicletarios</returns>
         [HttpGet]
         public IActionResult Listar()
         {
@@ -52,6 +61,11 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
             }
         }
 
+        /// <summary>
+        /// Metodo responsavel por buscar um bicicletario por id
+        /// </summary>
+        /// <param name="id">Id do bicicletario buscado</param>
+        /// <returns>Um bicicletario com um id igual ao enviado</returns>
         [HttpGet("{id}")]
         public IActionResult Buscar(int id)
         {

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Senai_ProjetoAvanade_webAPI.Contexts;
 using Senai_ProjetoAvanade_webAPI.Domains;
 using Senai_ProjetoAvanade_webAPI.Interfaces;
 using Senai_ProjetoAvanade_webAPI.Repositories;
@@ -16,15 +17,15 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
     [ApiController]
     public class UsuarioController : ControllerBase
     {
-        private IUsuarioRepository _usuarioRepository { get; set; }
+        private readonly IUsuarioRepository _context;
 
-        public UsuarioController()
+        public UsuarioController(UsuarioRepository context)
         {
-            _usuarioRepository = new UsuarioRepository();
+            _context = context;
         }
 
         /// <summary>
-        /// Método para novos usuarios poderem se cadastrar
+        /// Metodo para novos usuarios poderem se cadastrar
         /// </summary>
         /// <param name="usuarionovo">Objeto do tipo usuario que vai ser cadastrado</param>
         /// <returns></returns>
@@ -34,7 +35,7 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
 
             try
             {
-                _usuarioRepository.Cadastrar(usuarionovo);
+                _context.Usuarios.Cadastrar(usuarionovo);
 
                 return StatusCode(201);
             }
@@ -46,7 +47,7 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
         }
 
         /// <summary>
-        /// Método para buscar informações de um usuario especifico
+        /// Metodo para buscar informações de um usuario especifico
         /// </summary>
         /// <param name="id">Id que sera usado para comparacao</param>
         /// <returns>Usuario com o id igual ao enviado</returns>
@@ -57,7 +58,7 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
             try
             {
 
-                return Ok(_usuarioRepository.BuscarId(id));
+                return Ok(_context.Usuarios.BuscarId(id));
 
             }
             catch (Exception ex)

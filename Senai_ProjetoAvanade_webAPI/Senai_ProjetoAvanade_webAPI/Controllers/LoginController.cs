@@ -27,7 +27,7 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
         }
 
         /// <summary>
-        /// Método responsavel por fazer login no sistema
+        /// Metodo responsavel por fazer login no sistema
         /// </summary>
         /// <param name="login">Objeto do tipo Login com Email e Senha</param>
         /// <returns>Usuario com esse email e senha</returns>

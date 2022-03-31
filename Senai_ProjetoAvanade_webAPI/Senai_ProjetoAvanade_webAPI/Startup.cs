@@ -1,22 +1,32 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
+using Senai_ProjetoAvanade_webAPI.Contexts;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
+using System.Configuration;
+using Senai_ProjetoAvanade_webAPI.Interfaces;
+using Senai_ProjetoAvanade_webAPI.Repositories;
 
 namespace Senai_ProjetoAvanade_webAPI
 {
     public class Startup
     {
+
+        public Startup(IConfiguration _configuration)
+        {
+            Configuration = _configuration;
+        }
+
+        public IConfiguration Configuration { get; }
+
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
@@ -78,6 +88,17 @@ namespace Senai_ProjetoAvanade_webAPI
                                     .AllowAnyMethod();
                                 });
             });
+
+            services.AddDbContext<AvanadeContext>(options =>
+                             options.UseSqlServer(Configuration.GetConnectionString("Default"))
+                         );
+
+
+            services.AddTransient<DbContext, AvanadeContext>();
+            services.AddTransient<IUsuarioRepository, UsuarioRepository>();
+            services.AddTransient<IBicicletarioRepository, BicicletarioRepository>();
+            services.AddTransient<IReservaRepository, ReservaRepository>();
+            services.AddTransient<IVagasRepository, VagasRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
