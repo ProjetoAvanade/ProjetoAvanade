@@ -12,7 +12,12 @@ namespace Senai_ProjetoAvanade_webAPI.Repositories
     public class ReservaRepository : IReservaRepository
     {
 
-        AvanadeContext ctx = new AvanadeContext();
+        private readonly AvanadeContext ctx;
+
+        public ReservaRepository(AvanadeContext appContext)
+        {
+            ctx = appContext;
+        }
 
         /// <summary>
         /// Metodo responsavel por atualizar uma reserva ja existente

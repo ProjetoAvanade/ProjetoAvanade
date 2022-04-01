@@ -12,7 +12,12 @@ namespace Senai_ProjetoAvanade_webAPI.Repositories
     public class UsuarioRepository : IUsuarioRepository
     {
 
-        AvanadeContext ctx = new AvanadeContext();
+        private readonly AvanadeContext ctx;
+
+        public UsuarioRepository(AvanadeContext appContext)
+        {
+            ctx = appContext;
+        }
 
         public Usuario BuscarId(int id)
         {

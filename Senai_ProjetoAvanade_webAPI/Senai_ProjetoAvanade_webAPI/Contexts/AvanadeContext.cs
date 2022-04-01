@@ -28,7 +28,7 @@ namespace Senai_ProjetoAvanade_webAPI.Contexts
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Data Source=NOTE0113F1\\SQLEXPRESS; initial catalog=AVANADE; Integrated Security=true;");
+                optionsBuilder.UseSqlServer("name=Default");
             }
         }
 

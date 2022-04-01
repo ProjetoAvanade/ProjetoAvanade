@@ -11,7 +11,12 @@ namespace Senai_ProjetoAvanade_webAPI.Repositories
     public class BicicletarioRepository : IBicicletarioRepository
     {
 
-        AvanadeContext ctx = new AvanadeContext();
+        private readonly AvanadeContext ctx;
+
+        public BicicletarioRepository(AvanadeContext appContext)
+        {
+            ctx = appContext;
+        }
 
         public Bicicletario Buscar(int id)
         {

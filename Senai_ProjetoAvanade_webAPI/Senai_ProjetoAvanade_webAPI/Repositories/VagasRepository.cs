@@ -11,7 +11,12 @@ namespace Senai_ProjetoAvanade_webAPI.Repositories
 {
     public class VagasRepository : IVagasRepository
     {
-        AvanadeContext ctx = new AvanadeContext();
+        private readonly AvanadeContext ctx;
+
+        public VagasRepository(AvanadeContext appContext)
+        {
+            ctx = appContext;
+        }
 
         public void Atualizar(int id, vagasViewModel status)
         {
