@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Senai_ProjetoAvanade_webAPI.Interfaces
 {
-    interface IReservaRepository
+    public interface IReservaRepository
     {
         /// <summary>
         /// Método para criar uma nova reserva de uma vaga

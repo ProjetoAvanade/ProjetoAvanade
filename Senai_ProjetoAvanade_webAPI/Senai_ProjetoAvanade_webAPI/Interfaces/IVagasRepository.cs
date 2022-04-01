@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Senai_ProjetoAvanade_webAPI.Interfaces
 {
-    interface IVagasRepository
+    public interface IVagasRepository
     {
 
         /// <summary>

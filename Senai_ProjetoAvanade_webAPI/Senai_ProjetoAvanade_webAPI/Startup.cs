@@ -96,7 +96,7 @@ namespace Senai_ProjetoAvanade_webAPI
 
             services.AddTransient<DbContext, AvanadeContext>();
             services.AddTransient<IUsuarioRepository, UsuarioRepository>();
-            services.AddTransient<IBicicletarioRepository, BicicletarioRepository>();
+            services.AddTransient<IBicicletarioRepository, BicicletarioRepository>(); //IBicicletarioRepository ta indo pro repository
             services.AddTransient<IReservaRepository, ReservaRepository>();
             services.AddTransient<IVagasRepository, VagasRepository>();
         }

@@ -19,7 +19,7 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
     {
         private readonly IUsuarioRepository _context;
 
-        public UsuarioController(UsuarioRepository context)
+        public UsuarioController(IUsuarioRepository context)
         {
             _context = context;
         }
@@ -35,7 +35,7 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
 
             try
             {
-                _context.Usuarios.Cadastrar(usuarionovo);
+                _context.Cadastrar(usuarionovo);
 
                 return StatusCode(201);
             }
@@ -58,7 +58,7 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
             try
             {
 
-                return Ok(_context.Usuarios.BuscarId(id));
+                return Ok(_context.BuscarId(id));
 
             }
             catch (Exception ex)

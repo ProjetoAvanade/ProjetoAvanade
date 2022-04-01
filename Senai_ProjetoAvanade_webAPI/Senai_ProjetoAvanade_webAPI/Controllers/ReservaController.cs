@@ -16,11 +16,11 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
     [ApiController]
     public class ReservaController : ControllerBase
     {
-        private IReservaRepository _reservaRepository { get; set; }
+        private readonly IReservaRepository _reservaRepository;
 
-        public ReservaController()
-        {      
-            _reservaRepository = new ReservaRepository();
+        public ReservaController(IReservaRepository reserva)
+        {
+            _reservaRepository = reserva;
         }
 
         /// <summary>

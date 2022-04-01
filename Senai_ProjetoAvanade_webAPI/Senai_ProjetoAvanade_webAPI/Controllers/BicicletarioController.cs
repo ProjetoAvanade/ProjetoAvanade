@@ -15,11 +15,12 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
     [ApiController]
     public class BicicletarioController : ControllerBase
     {
-        private IBicicletarioRepository _bicicletarioRepository { get; set; }
+        private readonly IBicicletarioRepository _bicicletarioRepository; //E declarado um IBicicletarioRepository
 
-        public BicicletarioController()
+        public BicicletarioController(IBicicletarioRepository bicicletario) 
+            //O controller vai ser instanciado com uma Interface juntando os dados de uma Interface com a outra atribuindo os valores
         {
-            _bicicletarioRepository = new BicicletarioRepository();
+            _bicicletarioRepository = bicicletario;
         }
 
         /// <summary>

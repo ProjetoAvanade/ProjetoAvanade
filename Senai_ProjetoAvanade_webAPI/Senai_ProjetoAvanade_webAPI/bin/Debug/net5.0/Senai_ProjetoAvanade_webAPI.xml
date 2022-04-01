@@ -44,6 +44,13 @@
             <param name="id">Id da reserva a ser atualizada</param>
             <param name="ReservaAtualizada">Novas informações</param>
         </member>
+        <member name="M:Senai_ProjetoAvanade_webAPI.Controllers.UsuarioController.Cadastrar(Senai_ProjetoAvanade_webAPI.Domains.Usuario)">
+            <summary>
+            Metodo para novos usuarios poderem se cadastrar
+            </summary>
+            <param name="usuarionovo">Objeto do tipo usuario que vai ser cadastrado</param>
+            <returns></returns>
+        </member>
         <member name="M:Senai_ProjetoAvanade_webAPI.Controllers.UsuarioController.Buscar(System.Int32)">
             <summary>
             Metodo para buscar informações de um usuario especifico

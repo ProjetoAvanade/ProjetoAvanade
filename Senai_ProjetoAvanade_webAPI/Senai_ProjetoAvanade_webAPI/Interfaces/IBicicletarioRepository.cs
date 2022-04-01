@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Senai_ProjetoAvanade_webAPI.Interfaces
 {
-    interface IBicicletarioRepository
+    public interface IBicicletarioRepository //Precisa ser publica para que a injecao de dependencia possa acessar
     {
         void Cadastrar(Bicicletario bicicletarionovo);
 

@@ -15,11 +15,12 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
     [ApiController]
     public class VagasController : ControllerBase
     {
-        private IVagasRepository _vagasRepository { get; set; }
 
-        public VagasController()
+        private readonly IVagasRepository _vagasRepository;
+
+        public VagasController(IVagasRepository vagas)
         {
-            _vagasRepository = new VagasRepository();
+            _vagasRepository = vagas;
         }
 
         /// <summary>

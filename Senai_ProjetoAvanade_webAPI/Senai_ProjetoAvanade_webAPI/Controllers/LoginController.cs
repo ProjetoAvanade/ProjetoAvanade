@@ -19,11 +19,11 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
     [ApiController]
     public class LoginController : ControllerBase
     {
-        private IUsuarioRepository _usuarioRepository { get; set; }
+        private readonly IUsuarioRepository _usuarioRepository;
 
-        public LoginController()
+        public LoginController(IUsuarioRepository context)
         {
-            _usuarioRepository = new UsuarioRepository();
+            _usuarioRepository = context;
         }
 
         /// <summary>
