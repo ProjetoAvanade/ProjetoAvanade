@@ -29,8 +29,22 @@
     height: 25vh;
     background-color: #fff;
     border-radius: 8px;
-    border-left: solid 10px  linear-gradient(180.01deg, #F3BC2C 0.01%, #F9A826 99.99%);
+    border-left: solid 10px;
     justify-content: space-evenly;
+    border-image-slice: 1;
+    border-width: 5px;
+}
+
+.box_info{
+    border-image-source: linear-gradient(180.01deg, #9BF32C 0.01%, #90F926 99.99%);
+}
+
+.box_info_vermelho{
+    border-image-source: linear-gradient(180.01deg, #F35C2C 0.01%, #F92626 99.99%);
+}
+
+.box_info_amarelo{
+    border-image-source: linear-gradient(180.01deg, #F3BC2C 0.01%, #F9A826 99.99%);
 }
 
 .infos{
@@ -44,4 +58,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.container_infos{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 35%;
+    width: 90%;
+}
+
+.container_grafico{
+    background-color: #fff;
+    height: 65%;
+    width: 82%;
+    margin-bottom: 20px;
 }
