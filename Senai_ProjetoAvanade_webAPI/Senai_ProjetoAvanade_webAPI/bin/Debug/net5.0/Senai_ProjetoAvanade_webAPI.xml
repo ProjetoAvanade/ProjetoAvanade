@@ -57,11 +57,10 @@
             <param name="usuarionovo">Objeto do tipo usuario que vai ser cadastrado</param>
             <returns></returns>
         </member>
-        <member name="M:Senai_ProjetoAvanade_webAPI.Controllers.UsuarioController.Buscar(System.Int32)">
+        <member name="M:Senai_ProjetoAvanade_webAPI.Controllers.UsuarioController.Buscar">
             <summary>
             Metodo para buscar informações de um usuario especifico
             </summary>
-            <param name="id">Id que sera usado para comparacao</param>
             <returns>Usuario com o id igual ao enviado</returns>
         </member>
         <member name="M:Senai_ProjetoAvanade_webAPI.Controllers.VagasController.ListarTodas(System.Int32)">
