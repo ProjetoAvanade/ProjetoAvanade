@@ -1,4 +1,5 @@
-﻿using Senai_ProjetoAvanade_webAPI.Contexts;
+﻿using Microsoft.EntityFrameworkCore;
+using Senai_ProjetoAvanade_webAPI.Contexts;
 using Senai_ProjetoAvanade_webAPI.Domains;
 using Senai_ProjetoAvanade_webAPI.Interfaces;
 using Senai_ProjetoAvanade_webAPI.ViewModels;
@@ -45,6 +46,31 @@ namespace Senai_ProjetoAvanade_webAPI.Repositories
             ctx.Reservas.Add(novareserva);
 
             ctx.SaveChanges();
+        }
+
+        public List<Reserva> Listar_Minhas(int id)
+        {
+            return ctx.Reservas.Include(c => c.IdVagaNavigation).Include(c => c.IdUsuarioNavigation)
+                .Select(c => new Reserva() { 
+                IdReserva = c.IdReserva,
+                IdUsuario = c.IdUsuario,
+                IdUsuarioNavigation = new Usuario()
+                {
+                    NomeUsuario = c.IdUsuarioNavigation.NomeUsuario,
+                    Email = c.IdUsuarioNavigation.Email,
+                    Cpf = c.IdUsuarioNavigation.Cpf
+                },
+                IdVagaNavigation = new Vaga()
+                {
+                    IdVaga = c.IdVagaNavigation.IdVaga,
+                    IdBicicletarioNavigation = new Bicicletario()
+                    {
+                        Nome = c.IdVagaNavigation.IdBicicletarioNavigation.Nome,
+                    }
+                }
+                })
+                .Where(P => P.IdUsuario == id)
+                .ToList();
         }
     }
 }

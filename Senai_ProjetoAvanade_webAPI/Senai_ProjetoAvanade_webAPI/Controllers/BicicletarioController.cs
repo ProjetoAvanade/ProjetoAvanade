@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Senai_ProjetoAvanade_webAPI.Domains;
 using Senai_ProjetoAvanade_webAPI.Interfaces;
@@ -28,6 +29,7 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
         /// </summary>
         /// <param name="bicicletarionovo">Novo bicicletario a ser cadastrado</param>
         /// <returns></returns>
+        [Authorize(Roles = "1")]
         [HttpPost]
         public IActionResult Cadastrar(Bicicletario bicicletarionovo)
         {
@@ -49,6 +51,7 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
         /// Metodo responsavel pela listagem de todos os bicicletarios
         /// </summary>
         /// <returns>Uma lista de Bicicletarios</returns>
+        [Authorize(Roles = "2")]
         [HttpGet]
         public IActionResult Listar()
         {
@@ -67,6 +70,7 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
         /// </summary>
         /// <param name="id">Id do bicicletario buscado</param>
         /// <returns>Um bicicletario com um id igual ao enviado</returns>
+        [Authorize(Roles = "2")]
         [HttpGet("{id}")]
         public IActionResult Buscar(int id)
         {

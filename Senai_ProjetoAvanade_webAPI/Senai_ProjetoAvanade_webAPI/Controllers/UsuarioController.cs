@@ -29,6 +29,7 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
         /// </summary>
         /// <param name="usuarionovo">Objeto do tipo usuario que vai ser cadastrado</param>
         /// <returns></returns>
+        
         [HttpPost]
         public IActionResult Cadastrar(Usuario usuarionovo)
         {
@@ -51,7 +52,7 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
         /// </summary>
         /// <param name="id">Id que sera usado para comparacao</param>
         /// <returns>Usuario com o id igual ao enviado</returns>
-        
+        [Authorize]
         [HttpGet("{id}")]
         public IActionResult Buscar(int id)
         {

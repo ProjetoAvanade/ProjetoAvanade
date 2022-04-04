@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Senai_ProjetoAvanade_webAPI.Interfaces;
 using Senai_ProjetoAvanade_webAPI.Repositories;
@@ -28,6 +29,7 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
         /// </summary>
         /// <param name="id">id do bicicletario especifico</param>
         /// <returns>Uma lista com as vagas do bicicletario</returns>
+        [Authorize(Roles = "2")]
         [HttpGet("{id}")]
         public IActionResult ListarTodas(int id)
         {
@@ -47,6 +49,7 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
         /// </summary>
         /// <param name="id">Id da vaga a ser buscada</param>
         /// <param name="status_novo">Novo valor para o status dessa vaga</param>
+        [Authorize(Roles = "2")]
         [HttpPut("{id}")]
         public IActionResult AtualizarStatusVaga(int id, vagasViewModel status_novo)
         {

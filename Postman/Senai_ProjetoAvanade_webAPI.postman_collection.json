@@ -166,6 +166,16 @@
 				{
 					"name": "Bicicletario.Listar",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imxlb25hcmRvQGdtYWlsLmNvbSIsImp0aSI6IjMiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIyIiwicm9sZSI6IjIiLCJleHAiOjE2NDkwODMwMTUsImlzcyI6IlByb2pldG9BdmFuYWRlX3dlYkFQSSIsImF1ZCI6IlByb2pldG9BdmFuYWRlX3dlYkFQSSJ9.c6abZQmHG4L7CdTAsqsJg4-Rn0OZGUx9ejLzHWS6OBw",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -285,6 +295,36 @@
 								}
 							}
 						},
+						"url": {
+							"raw": "http://localhost:5000/api/Reserva",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Reserva"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rservas.Listar_Minhas",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imxlb25hcmRvQGdtYWlsLmNvbSIsImp0aSI6IjMiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIyIiwicm9sZSI6IjIiLCJleHAiOjE2NDkwODMwMTUsImlzcyI6IlByb2pldG9BdmFuYWRlX3dlYkFQSSIsImF1ZCI6IlByb2pldG9BdmFuYWRlX3dlYkFQSSJ9.c6abZQmHG4L7CdTAsqsJg4-Rn0OZGUx9ejLzHWS6OBw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
 						"url": {
 							"raw": "http://localhost:5000/api/Reserva",
 							"protocol": "http",

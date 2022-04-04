@@ -21,5 +21,12 @@ namespace Senai_ProjetoAvanade_webAPI.Interfaces
         /// <param name="id">Id da reserva para ser atualizada</param>
         /// <param name="ReservaAtualizada">Novas informacoes da reserva</param>
         void Atualizar(int id, reservaViewModel ReservaAtualizada);
+
+        /// <summary>
+        /// Metodo responsavel popr listar as reservas do usuario logado
+        /// </summary>
+        /// <param name="id">Id do usuario logado</param>
+        /// <returns>Uma lista de reservas</returns>
+        List<Reserva> Listar_Minhas(int id);
     }
 }
