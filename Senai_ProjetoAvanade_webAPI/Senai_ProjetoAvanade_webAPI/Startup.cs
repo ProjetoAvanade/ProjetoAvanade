@@ -81,12 +81,12 @@ namespace Senai_ProjetoAvanade_webAPI
             services.AddCors(options =>
             {
                 options.AddPolicy("CorPolicy",
-                                builder =>
-                                {
-                                    builder.WithOrigins("*")
-                                    .AllowAnyHeader()
-                                    .AllowAnyMethod();
-                                });
+                                 builder =>
+                                 {
+                                     builder.WithOrigins("*")
+                                     .AllowAnyHeader()
+                                     .AllowAnyMethod();
+                                 });
             });
 
             services.AddDbContext<AvanadeContext>(options =>
