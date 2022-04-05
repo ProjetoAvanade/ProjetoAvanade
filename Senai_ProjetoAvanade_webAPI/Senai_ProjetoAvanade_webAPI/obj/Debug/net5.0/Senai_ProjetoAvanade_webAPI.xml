@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Senai_ProjetoAvanade_webAPI</name>
+    </assembly>
+    <members>
+        <member name="M:Senai_ProjetoAvanade_webAPI.Controllers.BicicletarioController.Cadastrar(Senai_ProjetoAvanade_webAPI.Domains.Bicicletario)">
+            <summary>
+            Metodo responsave pelo cadastro de novos bicicletarios
+            </summary>
+            <param name="bicicletarionovo">Novo bicicletario a ser cadastrado</param>
+            <returns></returns>
+        </member>
+        <member name="M:Senai_ProjetoAvanade_webAPI.Controllers.BicicletarioController.Listar">
+            <summary>
+            Metodo responsavel pela listagem de todos os bicicletarios
+            </summary>
+            <returns>Uma lista de Bicicletarios</returns>
+        </member>
+        <member name="M:Senai_ProjetoAvanade_webAPI.Controllers.BicicletarioController.Buscar(System.Int32)">
+            <summary>
+            Metodo responsavel por buscar um bicicletario por id
+            </summary>
+            <param name="id">Id do bicicletario buscado</param>
+            <returns>Um bicicletario com um id igual ao enviado</returns>
+        </member>
+        <member name="M:Senai_ProjetoAvanade_webAPI.Controllers.LoginController.Login(Senai_ProjetoAvanade_webAPI.ViewModels.loginViewModel)">
+            <summary>
+            Metodo responsavel por fazer login no sistema
+            </summary>
+            <param name="login">Objeto do tipo Login com Email e Senha</param>
+            <returns>Usuario com esse email e senha</returns>
+        </member>
+        <member name="M:Senai_ProjetoAvanade_webAPI.Controllers.ReservaController.Cadastrar(Senai_ProjetoAvanade_webAPI.Domains.Reserva)">
+            <summary>
+            Metodo reponsavel pelo cadastro de novas reservas
+            </summary>
+            <param name="NovaReserva">Uma nova reserva a ser cadastrada</param>
+        </member>
+        <member name="M:Senai_ProjetoAvanade_webAPI.Controllers.ReservaController.Atualizar(System.Int32,Senai_ProjetoAvanade_webAPI.ViewModels.reservaViewModel)">
+            <summary>
+            Metodo responsavel por atualizar uma reserva ja existente
+            </summary>
+            <param name="id">Id da reserva a ser atualizada</param>
+            <param name="ReservaAtualizada">Novas informações</param>
+        </member>
+        <member name="M:Senai_ProjetoAvanade_webAPI.Controllers.ReservaController.Listar_Minhas">
+            <summary>
+            Metodo responsavel por listar as reservas do usuario logado
+            </summary>
+            <returns>Uma lista de reservas</returns>
+        </member>
+        <member name="M:Senai_ProjetoAvanade_webAPI.Controllers.UsuarioController.Cadastrar(Senai_ProjetoAvanade_webAPI.Domains.Usuario)">
+            <summary>
+            Metodo para novos usuarios poderem se cadastrar
+            </summary>
+            <param name="usuarionovo">Objeto do tipo usuario que vai ser cadastrado</param>
+            <returns></returns>
+        </member>
+        <member name="M:Senai_ProjetoAvanade_webAPI.Controllers.UsuarioController.Buscar">
+            <summary>
+            Metodo para buscar informações de um usuario especifico
+            </summary>
+            <returns>Usuario com o id igual ao enviado</returns>
+        </member>
+        <member name="M:Senai_ProjetoAvanade_webAPI.Controllers.VagasController.ListarTodas(System.Int32)">
+            <summary>
+            Método responsavel por listar todas as vagas de um bicicletario responsavel
+            </summary>
+            <param name="id">id do bicicletario especifico</param>
+            <returns>Uma lista com as vagas do bicicletario</returns>
+        </member>
+        <member name="M:Senai_ProjetoAvanade_webAPI.Controllers.VagasController.AtualizarStatusVaga(System.Int32,Senai_ProjetoAvanade_webAPI.ViewModels.vagasViewModel)">
+            <summary>
+            Metodo responsavel pela atualizacao do status de uma vaga
+            </summary>
+            <param name="id">Id da vaga a ser buscada</param>
+            <param name="status_novo">Novo valor para o status dessa vaga</param>
+        </member>
+        <member name="M:Senai_ProjetoAvanade_webAPI.Interfaces.IReservaRepository.Cadastrar(Senai_ProjetoAvanade_webAPI.Domains.Reserva)">
+            <summary>
+            Método para criar uma nova reserva de uma vaga
+            </summary>
+            <param name="novareserva">Nova reserva a ser realizada</param>
+        </member>
+        <member name="M:Senai_ProjetoAvanade_webAPI.Interfaces.IReservaRepository.Atualizar(System.Int32,Senai_ProjetoAvanade_webAPI.ViewModels.reservaViewModel)">
+            <summary>
+            Metodo responsavel pela atualização de algumas informacoes de um reserva
+            </summary>
+            <param name="id">Id da reserva para ser atualizada</param>
+            <param name="ReservaAtualizada">Novas informacoes da reserva</param>
+        </member>
+        <member name="M:Senai_ProjetoAvanade_webAPI.Interfaces.IReservaRepository.Listar_Minhas(System.Int32)">
+            <summary>
+            Metodo responsavel popr listar as reservas do usuario logado
+            </summary>
+            <param name="id">Id do usuario logado</param>
+            <returns>Uma lista de reservas</returns>
+        </member>
+        <member name="M:Senai_ProjetoAvanade_webAPI.Interfaces.IUsuarioRepository.Login(System.String,System.String)">
+            <summary>
+            Metodo responsavel pelo login do usuario
+            </summary>
+            <param name="email">Email inserido pelo usuario para comparacao</param>
+            <param name="senha">Senha inserida pelo usuario para comparção</param>
+            <returns>Retorna um usuario caso os valores recebidos sejam semelhantes aos do banco de dados.</returns>
+        </member>
+        <member name="M:Senai_ProjetoAvanade_webAPI.Interfaces.IUsuarioRepository.Cadastrar(Senai_ProjetoAvanade_webAPI.Domains.Usuario)">
+            <summary>
+            Método de cadastro de usuario
+            </summary>
+            <param name="usuarionovo">Novo objeto do tipo usuario para cadastro</param>
+        </member>
+        <member name="M:Senai_ProjetoAvanade_webAPI.Interfaces.IVagasRepository.ListarTodas(System.Int32)">
+            <summary>
+            Métodos de listar todas as vagas de um bicicletário especifico
+            </summary>
+            <param name="id">id do bicicletario</param>
+            <returns>Uma lista de vagas sobre um bicicletario especifico</returns>
+        </member>
+        <member name="M:Senai_ProjetoAvanade_webAPI.Interfaces.IVagasRepository.Atualizar(System.Int32,Senai_ProjetoAvanade_webAPI.ViewModels.vagasViewModel)">
+            <summary>
+            Método para atualizar o status de uma vaga
+            </summary>
+            <param name="id">Id da vaga a ser atualizada</param>
+            <param name="status">novo valor de status para a vaga</param>
+        </member>
+        <member name="M:Senai_ProjetoAvanade_webAPI.Repositories.ReservaRepository.Atualizar(System.Int32,Senai_ProjetoAvanade_webAPI.ViewModels.reservaViewModel)">
+            <summary>
+            Metodo responsavel por atualizar uma reserva ja existente
+            </summary>
+            <param name="id">Id da reserva a ser atualizada</param>
+            <param name="ReservaAtualizada">Novas informações</param>
+        </member>
+    </members>
+</doc>
