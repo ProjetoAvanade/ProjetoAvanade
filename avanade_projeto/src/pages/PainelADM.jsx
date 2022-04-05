@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import { Doughnut } from 'react-chartjs-2';
+
+import BarChart from '../components/Grafico'
+import { UserData } from '../teste'
 
 import img_perfil from '../assets/img/profile.svg'
 import icone_verde from '../assets/img/icone.svg'
@@ -9,6 +11,25 @@ import icone_verde from '../assets/img/icone.svg'
 import '../assets/css/PainelADM.css'
 
 export default function PainelADM() {
+    const [userData, setUserData] = useState({
+        labels: UserData.map((data) => data.month),
+        datasets: [
+          {
+            label: "Lucros",
+            data: UserData.map((data) => data.userGain),
+            backgroundColor: [
+              "#90F926",
+            ],
+          },
+          {
+            label: "Perdas",
+            data: UserData.map((data) => data.userLost),
+            backgroundColor: [
+              "#F92626",
+            ],
+          },
+        ],
+      });
     return (
         <div>
             <header className="cabecalho">
@@ -51,7 +72,7 @@ export default function PainelADM() {
                     </div>
                 </div>
                 <div className="container_grafico">
-                    
+                <BarChart chartData={userData} className="teste"/>
                 </div>
             </section>
         </div>

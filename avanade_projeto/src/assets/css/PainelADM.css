@@ -19,8 +19,12 @@
 
 .Background{
     background-color: #DCDBD7;
-    height: 100vh;
+    height: 110vh;
     width: 100vw;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
 }
 
 .box_info{
@@ -70,7 +74,15 @@
 
 .container_grafico{
     background-color: #fff;
-    height: 65%;
+    height: 59%;
     width: 82%;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grafico{
+    height: 100% !important;
+    width: 85% !important;
 }
