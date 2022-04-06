@@ -36,7 +36,7 @@ export default class Login extends Component {
                         break;
                     default:
                         this.props.history.refresh()
-                        break;
+                    break;
                 }
             }
 
