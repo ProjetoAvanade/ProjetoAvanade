@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\47073656808.INFOSCS\\Desktop\\ProjetoAvanade\\Senai_ProjetoAvanade_webAPI\\Senai_ProjetoAvanade_webAPI\\Senai_ProjetoAvanade_webAPI.csproj": {}
+    "C:\\Users\\Guilherme\\Desktop\\ProjetoAvanade\\Senai_ProjetoAvanade_webAPI\\Senai_ProjetoAvanade_webAPI\\Senai_ProjetoAvanade_webAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\47073656808.INFOSCS\\Desktop\\ProjetoAvanade\\Senai_ProjetoAvanade_webAPI\\Senai_ProjetoAvanade_webAPI\\Senai_ProjetoAvanade_webAPI.csproj": {
+    "C:\\Users\\Guilherme\\Desktop\\ProjetoAvanade\\Senai_ProjetoAvanade_webAPI\\Senai_ProjetoAvanade_webAPI\\Senai_ProjetoAvanade_webAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\47073656808.INFOSCS\\Desktop\\ProjetoAvanade\\Senai_ProjetoAvanade_webAPI\\Senai_ProjetoAvanade_webAPI\\Senai_ProjetoAvanade_webAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Guilherme\\Desktop\\ProjetoAvanade\\Senai_ProjetoAvanade_webAPI\\Senai_ProjetoAvanade_webAPI\\Senai_ProjetoAvanade_webAPI.csproj",
         "projectName": "Senai_ProjetoAvanade_webAPI",
-        "projectPath": "C:\\Users\\47073656808.INFOSCS\\Desktop\\ProjetoAvanade\\Senai_ProjetoAvanade_webAPI\\Senai_ProjetoAvanade_webAPI\\Senai_ProjetoAvanade_webAPI.csproj",
-        "packagesPath": "C:\\Users\\47073656808.INFOSCS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\47073656808.INFOSCS\\Desktop\\ProjetoAvanade\\Senai_ProjetoAvanade_webAPI\\Senai_ProjetoAvanade_webAPI\\obj\\",
+        "projectPath": "C:\\Users\\Guilherme\\Desktop\\ProjetoAvanade\\Senai_ProjetoAvanade_webAPI\\Senai_ProjetoAvanade_webAPI\\Senai_ProjetoAvanade_webAPI.csproj",
+        "packagesPath": "C:\\Users\\Guilherme\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Guilherme\\Desktop\\ProjetoAvanade\\Senai_ProjetoAvanade_webAPI\\Senai_ProjetoAvanade_webAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\47073656808.INFOSCS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Guilherme\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -89,6 +89,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[5.0.13, 5.0.13]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -97,7 +103,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
