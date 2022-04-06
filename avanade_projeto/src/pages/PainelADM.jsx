@@ -7,6 +7,8 @@ import { UserData } from '../teste'
 
 import img_perfil from '../assets/img/profile.svg'
 import icone_verde from '../assets/img/icone.svg'
+import icone_vermelho from '../assets/img/vermelho.svg'
+import icone_amarelo from '../assets/img/amarelo.svg'
 
 import '../assets/css/PainelADM.css'
 
@@ -40,9 +42,9 @@ export default function PainelADM() {
                 <div className="container_infos">
                     <div className="box_info">
                         <div className="infos">
-                            <span>Lucros</span>
-                            <span>R$ 12.500,00</span>
-                            <span>+ 2,2% que na semana passada</span>
+                            <span className="titulo">Lucros</span>
+                            <span className="valor">R$ 12.500,00</span>
+                            <span className="complemento">+ 2,2% que na semana passada</span>
                         </div>
                         <div className="logo_box">
                             <img src={icone_verde} alt="Icone referente ao lucro do sistema" />
@@ -51,23 +53,23 @@ export default function PainelADM() {
 
                     <div className="box_info box_info_vermelho">
                         <div className="infos">
-                            <span>Custos</span>
-                            <span>R$ 512,50</span>
-                            <span>+ 5,4% que na semana passada</span>
+                            <span className="titulo">Custos</span>
+                            <span className="valor">R$ 512,50</span>
+                            <span className="complemento">+ 5,4% que na semana passada</span>
                         </div>
                         <div className="logo_box">
-                            <img src={icone_verde} alt="Icone referente ao lucro do sistema" />
+                            <img src={icone_vermelho} alt="Icone referente aos custos do sistema" />
                         </div>
                     </div>
 
                     <div className="box_info box_info_amarelo">
                         <div className="infos">
-                            <span>Usuarios Totais</span>
-                            <span>8.2K</span>
-                            <span>Taxa de crescimento de 8% ao mês</span>
+                            <span className="titulo">Usuarios Totais</span>
+                            <span className="valor">8.2K</span>
+                            <span className="complemento">Taxa de crescimento de 8% ao mês</span>
                         </div>
                         <div className="logo_box">
-                            <img src={icone_verde} alt="Icone referente ao lucro do sistema" />
+                            <img src={icone_amarelo} alt="Icone referente a quantidade de usuarios" />
                         </div>
                     </div>
                 </div>
