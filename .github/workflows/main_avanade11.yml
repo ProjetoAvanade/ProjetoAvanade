@@ -53,5 +53,5 @@ jobs:
         with:
           app-name: 'avanade11'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_DDE2B1A307C74BE884F1812C2F80467C }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5DE41C927D634E76BF004BEDC8DF64AB }}
           package: .
