@@ -1,0 +1,105 @@
+@import url('http://fonts.cdnfonts.com/css/nats');
+
+* {
+    margin    : 0;
+    padding   : 0;
+    border    : 0;
+    box-sizing: border-box;
+}
+
+.container_tela{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    width: 100vw;
+}
+
+.banner_login{
+    background-image: url(../../assets/img/fundo-login.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 65%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.box_img{
+    width: 74%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box_form{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.box_inputs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 600px;
+    height: 500px;
+    border-radius: 30px;
+    border: 7px solid #F3BC2C;
+}
+
+.box_input{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.label_input{
+    font-family: 'NATS', sans-serif; 
+    color: #333333;
+    font-size: 20px;
+}
+
+.input_login{
+    height: 60px;
+    width: 500px;
+    background-color: #F3BC2C;
+    border-radius: 5px;
+    padding-left: 4%;
+    color: #333333;
+}
+
+.btn_login{
+    width: 270px;
+    height: 60px;
+    border-radius: 5px;
+    background-color: #F3BC2C;
+    font-size: 25px;
+    font-family: 'NATS', sans-serif;
+    color: #333333;
+}
+
+.input_login:focus{
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+/* Cor de fundo do autocomplete */
+.input_login:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px #F3BC2C inset;
+}
+
+/* Cor do texto do autocomplete */
+.input_login:-webkit-autofill {
+    -webkit-text-fill-color: #333333 !important;
+}
+
+.Mensagem_erro{
+    font-size: 20px;
+    font-family: 'NATS', sans-serif;
+    color: #333333;
+}

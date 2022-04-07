@@ -53,4 +53,4 @@ jobs:
           app-name: 'webavanade'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A5A855B082534DC39FE0A6B1AA44DE96 }}
-          package: .
+          package: 'build'
