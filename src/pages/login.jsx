@@ -26,16 +26,15 @@ export default class Login extends Component {
             email: this.state.email,
             senha: this.state.senha
         }).then(resposta => {
-            if (resposta === 200) {
+            if (resposta.status === 200) {
                 localStorage.setItem('usuario-login', resposta.data.token);
                 this.setState({ isLoading: false })
-
                 switch (parsejwt().role) {
                     case '1':
-                        this.props.history.push('/painelADM')
+                        window.location.href = "/painelADM"
                         break;
                     default:
-                        this.props.history.refresh()
+                        console.log('nn vai')
                     break;
                 }
             }
@@ -53,7 +52,6 @@ export default class Login extends Component {
     atualizaStateCampo = (campo) => {
         this.setState({ [campo.target.name]: campo.target.value });
     }
-
 
     render() {
         return (
@@ -86,5 +84,4 @@ export default class Login extends Component {
             </div>
         )
     }
-
 }
