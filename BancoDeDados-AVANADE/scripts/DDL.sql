@@ -24,7 +24,8 @@ CREATE TABLE usuarios (
 	dataNascimento DATE NOT NULL,
 	cpf CHAR(11) UNIQUE NOT NULL,
 	pontos INT DEFAULT 0,
-	saldo SMALLMONEY DEFAULT 0.00
+	saldo SMALLMONEY DEFAULT 0.00,
+	imagem VARCHAR(235)
 );
 GO
 
