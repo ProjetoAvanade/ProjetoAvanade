@@ -5,6 +5,7 @@ using Senai_ProjetoAvanade_webAPI.Contexts;
 using Senai_ProjetoAvanade_webAPI.Domains;
 using Senai_ProjetoAvanade_webAPI.Interfaces;
 using Senai_ProjetoAvanade_webAPI.Repositories;
+using Senai_ProjetoAvanade_webAPI.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -32,7 +33,7 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
         /// <returns></returns>
         
         [HttpPost]
-        public IActionResult Cadastrar(Usuario usuarionovo)
+        public IActionResult Cadastrar(usuarioViewModel usuarionovo)
         {
 
             try

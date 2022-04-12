@@ -4,7 +4,7 @@
         <name>Senai_ProjetoAvanade_webAPI</name>
     </assembly>
     <members>
-        <member name="M:Senai_ProjetoAvanade_webAPI.Controllers.BicicletarioController.Cadastrar(Senai_ProjetoAvanade_webAPI.Domains.Bicicletario)">
+        <member name="M:Senai_ProjetoAvanade_webAPI.Controllers.BicicletarioController.Cadastrar(Senai_ProjetoAvanade_webAPI.ViewModels.bicicletarioViewModel)">
             <summary>
             Metodo responsave pelo cadastro de novos bicicletarios
             </summary>
@@ -31,7 +31,7 @@
             <param name="login">Objeto do tipo Login com Email e Senha</param>
             <returns>Usuario com esse email e senha</returns>
         </member>
-        <member name="M:Senai_ProjetoAvanade_webAPI.Controllers.ReservaController.Cadastrar(Senai_ProjetoAvanade_webAPI.Domains.Reserva)">
+        <member name="M:Senai_ProjetoAvanade_webAPI.Controllers.ReservaController.Cadastrar(Senai_ProjetoAvanade_webAPI.ViewModels.reservacadasViewModel)">
             <summary>
             Metodo reponsavel pelo cadastro de novas reservas
             </summary>
@@ -50,7 +50,7 @@
             </summary>
             <returns>Uma lista de reservas</returns>
         </member>
-        <member name="M:Senai_ProjetoAvanade_webAPI.Controllers.UsuarioController.Cadastrar(Senai_ProjetoAvanade_webAPI.Domains.Usuario)">
+        <member name="M:Senai_ProjetoAvanade_webAPI.Controllers.UsuarioController.Cadastrar(Senai_ProjetoAvanade_webAPI.ViewModels.usuarioViewModel)">
             <summary>
             Metodo para novos usuarios poderem se cadastrar
             </summary>
@@ -77,7 +77,7 @@
             <param name="id">Id da vaga a ser buscada</param>
             <param name="status_novo">Novo valor para o status dessa vaga</param>
         </member>
-        <member name="M:Senai_ProjetoAvanade_webAPI.Interfaces.IReservaRepository.Cadastrar(Senai_ProjetoAvanade_webAPI.Domains.Reserva)">
+        <member name="M:Senai_ProjetoAvanade_webAPI.Interfaces.IReservaRepository.Cadastrar(Senai_ProjetoAvanade_webAPI.ViewModels.reservacadasViewModel)">
             <summary>
             Método para criar uma nova reserva de uma vaga
             </summary>
@@ -105,7 +105,7 @@
             <param name="senha">Senha inserida pelo usuario para comparção</param>
             <returns>Retorna um usuario caso os valores recebidos sejam semelhantes aos do banco de dados.</returns>
         </member>
-        <member name="M:Senai_ProjetoAvanade_webAPI.Interfaces.IUsuarioRepository.Cadastrar(Senai_ProjetoAvanade_webAPI.Domains.Usuario)">
+        <member name="M:Senai_ProjetoAvanade_webAPI.Interfaces.IUsuarioRepository.Cadastrar(Senai_ProjetoAvanade_webAPI.ViewModels.usuarioViewModel)">
             <summary>
             Método de cadastro de usuario
             </summary>

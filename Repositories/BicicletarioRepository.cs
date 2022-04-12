@@ -1,6 +1,7 @@
 ﻿using Senai_ProjetoAvanade_webAPI.Contexts;
 using Senai_ProjetoAvanade_webAPI.Domains;
 using Senai_ProjetoAvanade_webAPI.Interfaces;
+using Senai_ProjetoAvanade_webAPI.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,9 +24,22 @@ namespace Senai_ProjetoAvanade_webAPI.Repositories
             return ctx.Bicicletarios.FirstOrDefault(c => c.IdBicicletario == id);
         }
 
-        public void Cadastrar(Bicicletario bicicletarionovo)
+        public void Cadastrar(bicicletarioViewModel bicicletarionovo)
         {
-            ctx.Bicicletarios.Add(bicicletarionovo);
+            Bicicletario bicicletariocadastro = new Bicicletario();
+
+            bicicletariocadastro.Nome = bicicletarionovo.Nome;
+            bicicletariocadastro.Rua = bicicletarionovo.Rua;
+            bicicletariocadastro.Numero = bicicletarionovo.Numero;
+            bicicletariocadastro.Bairro = bicicletarionovo.Bairro;
+            bicicletariocadastro.Cidade = bicicletarionovo.Cidade;
+            bicicletariocadastro.Longitude = bicicletarionovo.Longitude;
+            bicicletariocadastro.Latitude = bicicletarionovo.Latitude;
+            bicicletariocadastro.Cep = bicicletarionovo.Cep;
+            bicicletariocadastro.HorarioAberto = bicicletarionovo.HorarioAberto;
+            bicicletariocadastro.HorarioFechado = bicicletarionovo.HorarioFechado;
+
+            ctx.Bicicletarios.Add(bicicletariocadastro);
 
             ctx.SaveChanges();
         }

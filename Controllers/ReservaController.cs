@@ -31,7 +31,7 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
         /// <param name="NovaReserva">Uma nova reserva a ser cadastrada</param>
         [Authorize(Roles = "2")]
         [HttpPost]
-        public IActionResult Cadastrar(Reserva NovaReserva)
+        public IActionResult Cadastrar(reservacadasViewModel NovaReserva)
         {
             try
             {

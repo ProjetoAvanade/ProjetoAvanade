@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Senai_ProjetoAvanade_webAPI.Domains;
 using Senai_ProjetoAvanade_webAPI.Interfaces;
 using Senai_ProjetoAvanade_webAPI.Repositories;
+using Senai_ProjetoAvanade_webAPI.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,7 +32,7 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
         /// <returns></returns>
         [Authorize(Roles = "1")]
         [HttpPost]
-        public IActionResult Cadastrar(Bicicletario bicicletarionovo)
+        public IActionResult Cadastrar(bicicletarioViewModel bicicletarionovo)
         {
             try
             {
