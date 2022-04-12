@@ -20,43 +20,16 @@ CREATE TABLE usuarios (
 	idTipoUsuario INT FOREIGN KEY REFERENCES tipoUsuario(idTipoUsuario),
 	nomeUsuario VARCHAR(50) NOT NULL,
 	email VARCHAR(70) UNIQUE NOT NULL,
-	senha VARCHAR(20) NOT NULL,
+	senha VARCHAR(100) NOT NULL,
 	dataNascimento DATE NOT NULL,
 	cpf CHAR(11) UNIQUE NOT NULL,
-	pontos BIT DEFAULT 0,
-	saldo SMALLMONEY
+	pontos INT DEFAULT 0,
+	saldo SMALLMONEY DEFAULT 0.00
 );
 GO
 
 
 SELECT * FROM usuarios
-GO;
-
--- VAGAS
-CREATE TABLE vagas(
-	idVaga INT PRIMARY KEY IDENTITY,
-	idBicicletario INT FOREIGN KEY REFERENCES bicicletarios(idBicicletario),
-	statusVaga BIT DEFAULT 0
-);
-GO
-
-SELECT * FROM vagas
-GO;
-
--- RESERVAS
-CREATE TABLE reservas(
-	idReserva INT PRIMARY KEY IDENTITY,
-	idUsuario INT FOREIGN KEY REFERENCES usuarios(idUsuario),
-	idVaga INT FOREIGN KEY REFERENCES vagas(idVaga),
-	abreTrava DATETIME,
-	fechaTrava DATETIME,
-	preco SMALLMONEY,
-	statusPagamento BIT DEFAULT 0
-);
-GO
-
-
-SELECT * FROM reservas
 GO;
 
 -- BICICLETARIOS 
@@ -77,3 +50,32 @@ GO
 
 SELECT * FROM bicicletarios
 GO;
+
+-- VAGAS
+CREATE TABLE vagas(
+	idVaga INT PRIMARY KEY IDENTITY,
+	idBicicletario INT FOREIGN KEY REFERENCES bicicletarios(idBicicletario),
+	statusVaga BIT DEFAULT 0
+);
+GO
+
+SELECT * FROM vagas
+GO;
+
+-- RESERVAS
+CREATE TABLE reservas(
+	idReserva INT PRIMARY KEY IDENTITY,
+	idUsuario INT FOREIGN KEY REFERENCES usuarios(idUsuario),
+	idVaga INT FOREIGN KEY REFERENCES vagas(idVaga),
+	abreTrava DATETIME,
+	fechaTrava DATETIME,
+	preco SMALLMONEY DEFAULT '0,00',
+	statusPagamento BIT DEFAULT 0
+);
+GO
+
+
+SELECT * FROM reservas
+GO;
+
+

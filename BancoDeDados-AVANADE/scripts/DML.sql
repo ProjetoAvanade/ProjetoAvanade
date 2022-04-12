@@ -11,11 +11,11 @@ GO
 --USUARIOS
 INSERT INTO usuarios(idTipoUsuario,nomeUsuario,email,senha,dataNascimento,cpf)
 VALUES	
-(1,'Yuri Mitsugui Chiba','yuri@gmail.com','yuri123','24-12-2004',00000000001),
-(2,'Gustavo Henrique Ferreira Alves','gustavo@gmail.com','gustavo123','16-07-2004',00000000002),
-(2,'Leonardo Souza de Castro','leonardo@gmail.com','leonardo123','03-06-2005',00000000003),
-(2,'Luiz Felipe Vera Cruz','luiz@gmail.com','luiz123','03-07-2002',00000000004),
-(2,'Colin Lucas Batista Beluco','colin@gmail.com','colin223','23-09-2004',00000000005);
+(1,'Yuri Mitsugui Chiba','yuri@gmail.com','yuri123','2004-12-24',00000000001),
+(2,'Gustavo Henrique Ferreira Alves','gustavo@gmail.com','gustavo123','2004-07-16',00000000002),
+(2,'Leonardo Souza de Castro','leonardo@gmail.com','leonardo123','2005-06-03',00000000003),
+(2,'Luiz Felipe Vera Cruz','luiz@gmail.com','luiz123','2002-07-03',00000000004),
+(2,'Colin Lucas Batista Beluco','colin@gmail.com','colin223','2004-09-23',00000000005);
 GO
 
 
