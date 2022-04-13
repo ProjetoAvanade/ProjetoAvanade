@@ -22,7 +22,7 @@ namespace Senai_ProjetoAvanade_webAPI.Interfaces
         /// Método de cadastro de usuario
         /// </summary>
         /// <param name="usuarionovo">Novo objeto do tipo usuario para cadastro</param>
-        void Cadastrar(usuarioViewModel usuarionovo, IFormFile arquivo);
+        void Cadastrar(usuarioViewModel usuarionovo);
 
         Usuario BuscarId(int id);
     }

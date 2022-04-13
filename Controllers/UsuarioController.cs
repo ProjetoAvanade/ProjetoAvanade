@@ -1,16 +1,12 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Senai_ProjetoAvanade_webAPI.Contexts;
-using Senai_ProjetoAvanade_webAPI.Domains;
 using Senai_ProjetoAvanade_webAPI.Interfaces;
-using Senai_ProjetoAvanade_webAPI.Repositories;
+using Senai_ProjetoAvanade_webAPI.Utils;
 using Senai_ProjetoAvanade_webAPI.ViewModels;
 using System;
-using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Senai_ProjetoAvanade_webAPI.Controllers
 {
@@ -26,18 +22,33 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
             _context = context;
         }
 
-        /// <summary>
-        /// Metodo para novos usuarios poderem se cadastrar
-        /// </summary>
-        /// <param name="usuarionovo">Objeto do tipo usuario que vai ser cadastrado</param>
-        /// <returns></returns>
         
+        /// <summary>
+        /// Metodo responsavel pelo cadastro de usuarios
+        /// </summary>
+        /// <param name="usuarionovo">Novo usuario a ser cadastrado</param>
+        /// <param name="arquivo">Imagem de perfil da pessoa</param>
+        /// <returns></returns>
         [HttpPost]
-        public IActionResult Cadastrar(usuarioViewModel usuarionovo)
+        public IActionResult Cadastrar([FromForm] usuarioViewModel usuarionovo, IFormFile arquivo)
         {
-
             try
             {
+                string[] extensoesPermitidas = { "jpg", "png", "jpeg" };
+                string uploadResultado = Upload.UploadFile(arquivo, extensoesPermitidas);
+
+                if (uploadResultado == "")
+                {
+                    return BadRequest("Arquivo não encontrado");
+                }
+
+                if (uploadResultado == "Extensão não permitida")
+                {
+                    return BadRequest("Extensão de arquivo não permitida");
+                }
+
+                usuarionovo.Imagem = uploadResultado;
+
                 _context.Cadastrar(usuarionovo);
 
                 return StatusCode(201);

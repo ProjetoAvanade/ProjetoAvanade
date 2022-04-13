@@ -17,7 +17,7 @@ namespace Senai_ProjetoAvanade_webAPI.Utils
             {
                 try
                 {
-                    var pasta = Path.Combine("StaticFiles", "Images");
+                    var pasta = Path.Combine("StaticFiles", "imagem");
                     var caminho = Path.Combine(Directory.GetCurrentDirectory(), pasta);
 
                     if (arquivo.Length > 0)

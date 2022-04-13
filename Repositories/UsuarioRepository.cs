@@ -1,14 +1,11 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Senai_ProjetoAvanade_webAPI.Contexts;
+using Senai_ProjetoAvanade_webAPI.Context;
 using Senai_ProjetoAvanade_webAPI.Domains;
 using Senai_ProjetoAvanade_webAPI.Interfaces;
 using Senai_ProjetoAvanade_webAPI.Utils;
 using Senai_ProjetoAvanade_webAPI.ViewModels;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Senai_ProjetoAvanade_webAPI.Repositories
 {
@@ -34,17 +31,15 @@ namespace Senai_ProjetoAvanade_webAPI.Repositories
                 Email = U.Email,
                 Pontos = U.Pontos,
                 Saldo = U.Saldo,
+                Imagem = U.Imagem,
                 IdUsuario = U.IdUsuario
             })
                 .FirstOrDefault(c => c.IdUsuario == id); 
              
         }
 
-        public void Cadastrar([FromForm] usuarioViewModel usuarionovo, IFormFile arquivo)
+        public void Cadastrar([FromForm] usuarioViewModel usuarionovo)
         {
-
-            string[] extensoesPermitidas = { "jpg", "png", "jpeg" };
-            var uploadResultado = Upload.UploadFile(arquivo, extensoesPermitidas);
 
             Usuario usuarioteste = new Usuario();
 
@@ -54,7 +49,6 @@ namespace Senai_ProjetoAvanade_webAPI.Repositories
             usuarioteste.Senha = usuarionovo.Senha;
             usuarioteste.Cpf = usuarionovo.Cpf;
             usuarioteste.DataNascimento = usuarionovo.DataNascimento;
-            //usuarioteste.Imagem = uploadResultado;
             
             ctx.Usuarios.Add(usuarioteste);
 

@@ -6,14 +6,14 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
-using Senai_ProjetoAvanade_webAPI.Contexts;
 using System;
 using System.IO;
 using System.Reflection;
 using Microsoft.Extensions.Configuration;
-using System.Configuration;
 using Senai_ProjetoAvanade_webAPI.Interfaces;
 using Senai_ProjetoAvanade_webAPI.Repositories;
+using Senai_ProjetoAvanade_webAPI.Context;
+using Microsoft.Extensions.FileProviders;
 
 namespace Senai_ProjetoAvanade_webAPI
 {
@@ -119,6 +119,13 @@ namespace Senai_ProjetoAvanade_webAPI
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Senai_ProjetoAvanade_webApi");
                 c.RoutePrefix = string.Empty;
+            });
+
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                FileProvider = new PhysicalFileProvider(
+                        Path.Combine(Directory.GetCurrentDirectory(), "StaticFiles")),
+                RequestPath = "/StaticFiles"
             });
 
             app.UseAuthentication();

@@ -22,5 +22,8 @@ namespace Senai_ProjetoAvanade_webAPI.ViewModels
 
         [Required]
         public string Cpf { get; set; }
+
+        [Required]
+        public string Imagem { get; set; }
     }
 }

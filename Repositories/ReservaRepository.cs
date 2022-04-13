@@ -1,12 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Senai_ProjetoAvanade_webAPI.Contexts;
+using Senai_ProjetoAvanade_webAPI.Context;
 using Senai_ProjetoAvanade_webAPI.Domains;
 using Senai_ProjetoAvanade_webAPI.Interfaces;
 using Senai_ProjetoAvanade_webAPI.ViewModels;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Senai_ProjetoAvanade_webAPI.Repositories
 {
