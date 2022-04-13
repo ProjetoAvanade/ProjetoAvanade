@@ -1,4 +1,6 @@
-﻿using Senai_ProjetoAvanade_webAPI.Domains;
+﻿using Microsoft.AspNetCore.Http;
+using Senai_ProjetoAvanade_webAPI.Domains;
+using Senai_ProjetoAvanade_webAPI.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +22,7 @@ namespace Senai_ProjetoAvanade_webAPI.Interfaces
         /// Método de cadastro de usuario
         /// </summary>
         /// <param name="usuarionovo">Novo objeto do tipo usuario para cadastro</param>
-        void Cadastrar(Usuario usuarionovo);
+        void Cadastrar(usuarioViewModel usuarionovo, IFormFile arquivo);
 
         Usuario BuscarId(int id);
     }

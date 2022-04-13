@@ -41,9 +41,16 @@ namespace Senai_ProjetoAvanade_webAPI.Repositories
             ctx.SaveChanges();
         }
 
-        public void Cadastrar(Reserva novareserva)
+        public void Cadastrar(reservacadasViewModel novareserva)
         {
-            ctx.Reservas.Add(novareserva);
+
+            Reserva reservacadastro = new Reserva();
+
+            reservacadastro.IdUsuario = novareserva.IdUsuario;
+            reservacadastro.IdVaga = novareserva.IdVaga;
+            reservacadastro.AbreTrava = novareserva.AbreTrava;
+
+            ctx.Reservas.Add(reservacadastro);
 
             ctx.SaveChanges();
         }

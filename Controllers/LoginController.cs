@@ -60,7 +60,7 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
                         signingCredentials: creds
                         );
 
-                    return Ok(new
+                    return Created("uri", new
                     {
                         token = new JwtSecurityTokenHandler().WriteToken(meuToken)
                     });

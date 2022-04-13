@@ -28,7 +28,7 @@ namespace Senai_ProjetoAvanade_webAPI.Contexts
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("name=Default");
+                optionsBuilder.UseSqlServer("");
             }
         }
 
