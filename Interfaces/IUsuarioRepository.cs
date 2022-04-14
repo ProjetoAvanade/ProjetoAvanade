@@ -24,6 +24,13 @@ namespace Senai_ProjetoAvanade_webAPI.Interfaces
         /// <param name="usuarionovo">Novo objeto do tipo usuario para cadastro</param>
         void Cadastrar(usuarioViewModel usuarionovo);
 
+        /// <summary>
+        /// Metodo responsavel por buscar um ususario especifico pelo ID
+        /// </summary>
+        /// <param name="id">Id a ser buscado</param>
+        /// <returns>Um usuario especifico</returns>
         Usuario BuscarId(int id);
+
+        Usuario AtualizarSaldo(saldoViewModel teste, int id);
     }
 }

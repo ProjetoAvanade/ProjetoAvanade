@@ -5,6 +5,7 @@ using Senai_ProjetoAvanade_webAPI.Domains;
 using Senai_ProjetoAvanade_webAPI.Interfaces;
 using Senai_ProjetoAvanade_webAPI.Utils;
 using Senai_ProjetoAvanade_webAPI.ViewModels;
+using System;
 using System.Linq;
 
 namespace Senai_ProjetoAvanade_webAPI.Repositories
@@ -17,6 +18,28 @@ namespace Senai_ProjetoAvanade_webAPI.Repositories
         public UsuarioRepository(AvanadeContext appContext)
         {
             ctx = appContext;
+        }
+
+        public Usuario AtualizarSaldo(saldoViewModel teste, int id)
+        {
+            Usuario usuariologado = ctx.Usuarios.FirstOrDefault(u => u.IdUsuario == id);
+
+            if (usuariologado.Pontos != 0)
+            {
+                usuariologado.Saldo = (teste.Saldo + usuariologado.Saldo);
+
+                usuariologado.Pontos = (usuariologado.Pontos - (Convert.ToInt32(teste.Saldo) * 15));
+
+                return usuariologado;
+            }
+
+            return null;
+
+            ctx.Usuarios.Update(usuariologado);
+
+            ctx.SaveChanges();
+
+            //return "Usuario não tem pontos suficientes";
         }
 
         public Usuario BuscarId(int id)
@@ -32,7 +55,7 @@ namespace Senai_ProjetoAvanade_webAPI.Repositories
                 Pontos = U.Pontos,
                 Saldo = U.Saldo,
                 Imagem = U.Imagem,
-                IdUsuario = U.IdUsuario
+                IdUsuario = U.IdUsuario,
             })
                 .FirstOrDefault(c => c.IdUsuario == id); 
              

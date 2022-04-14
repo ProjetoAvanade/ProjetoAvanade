@@ -112,6 +112,13 @@
             </summary>
             <param name="usuarionovo">Novo objeto do tipo usuario para cadastro</param>
         </member>
+        <member name="M:Senai_ProjetoAvanade_webAPI.Interfaces.IUsuarioRepository.BuscarId(System.Int32)">
+            <summary>
+            Metodo responsavel por buscar um ususario especifico pelo ID
+            </summary>
+            <param name="id">Id a ser buscado</param>
+            <returns>Um usuario especifico</returns>
+        </member>
         <member name="M:Senai_ProjetoAvanade_webAPI.Interfaces.IVagasRepository.ListarTodas(System.Int32)">
             <summary>
             Métodos de listar todas as vagas de um bicicletário especifico

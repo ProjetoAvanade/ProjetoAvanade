@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Senai_ProjetoAvanade_webAPI.Domains;
 using Senai_ProjetoAvanade_webAPI.Interfaces;
 using Senai_ProjetoAvanade_webAPI.Utils;
 using Senai_ProjetoAvanade_webAPI.ViewModels;
@@ -22,7 +23,7 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
             _context = context;
         }
 
-        
+
         /// <summary>
         /// Metodo responsavel pelo cadastro de usuarios
         /// </summary>
@@ -80,6 +81,24 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
                 return BadRequest(ex);
             }
 
+        }
+
+        //[Authorize(Roles = "2")]
+        [HttpPut]
+        public IActionResult AtualizarSaldo(saldoViewModel teste)
+        {
+            try
+            {
+                int id = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
+                Usuario usuarioteste = _context.AtualizarSaldo(teste, id);
+                return Ok( new {Saldo_Atual =  usuarioteste.Saldo, Pontos = usuarioteste.Pontos});
+                
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex);
+            }
         }
     }
 }
