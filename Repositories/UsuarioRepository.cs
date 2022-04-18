@@ -26,18 +26,29 @@ namespace Senai_ProjetoAvanade_webAPI.Repositories
 
             if (usuariologado.Pontos != 0)
             {
-                usuariologado.Saldo = (teste.Saldo + usuariologado.Saldo);
+                var resto = (usuariologado.Pontos - (Convert.ToInt32(teste.Saldo) * 15));
 
+                if (resto >= 0)
+                {
                 usuariologado.Pontos = (usuariologado.Pontos - (Convert.ToInt32(teste.Saldo) * 15));
 
+                usuariologado.Saldo = (teste.Saldo + usuariologado.Saldo);
+
+                ctx.Usuarios.Update(usuariologado);
+                ctx.SaveChanges();
+
                 return usuariologado;
+                }
+
+                else
+                {
+                    return null;
+                }
+
             }
 
             return null;
 
-            ctx.Usuarios.Update(usuariologado);
-
-            ctx.SaveChanges();
 
             //return "Usuario não tem pontos suficientes";
         }

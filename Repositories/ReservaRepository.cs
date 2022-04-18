@@ -3,6 +3,7 @@ using Senai_ProjetoAvanade_webAPI.Context;
 using Senai_ProjetoAvanade_webAPI.Domains;
 using Senai_ProjetoAvanade_webAPI.Interfaces;
 using Senai_ProjetoAvanade_webAPI.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -29,8 +30,15 @@ namespace Senai_ProjetoAvanade_webAPI.Repositories
 
             if (reservaBuscada != null)
             {
-                reservaBuscada.FechaTrava = ReservaAtualizada.FechaTrava;
-                reservaBuscada.Preco = ReservaAtualizada.Preco;
+                reservaBuscada.FechaTrava = DateTime.Now;
+
+                TimeSpan Diff_dates = Convert.ToDateTime(reservaBuscada.FechaTrava).Subtract(Convert.ToDateTime(reservaBuscada.AbreTrava));
+
+                for (int i = 0; i < Convert.ToDouble(Diff_dates); i++)
+                {
+                    reservaBuscada.Preco = i * Convert.ToDecimal(3.75);
+                }
+                //reservaBuscada.Preco = ReservaAtualizada.Preco;
                 reservaBuscada.StatusPagamento = ReservaAtualizada.StatusPagamento;
             }
 
@@ -39,14 +47,14 @@ namespace Senai_ProjetoAvanade_webAPI.Repositories
             ctx.SaveChanges();
         }
 
-        public void Cadastrar(reservacadasViewModel novareserva)
+        public void Cadastrar(reservacadasViewModel novareserva, int id)
         {
 
             Reserva reservacadastro = new Reserva();
 
-            reservacadastro.IdUsuario = novareserva.IdUsuario;
+            reservacadastro.IdUsuario = id;
             reservacadastro.IdVaga = novareserva.IdVaga;
-            reservacadastro.AbreTrava = novareserva.AbreTrava;
+            reservacadastro.AbreTrava = DateTime.Now;
 
             ctx.Reservas.Add(reservacadastro);
 

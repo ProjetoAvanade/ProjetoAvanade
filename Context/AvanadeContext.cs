@@ -28,7 +28,7 @@ namespace Senai_ProjetoAvanade_webAPI.Context
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("name=Default");
+                optionsBuilder.UseSqlServer("name=Default;");
             }
         }
 
@@ -39,7 +39,7 @@ namespace Senai_ProjetoAvanade_webAPI.Context
             modelBuilder.Entity<Bicicletario>(entity =>
             {
                 entity.HasKey(e => e.IdBicicletario)
-                    .HasName("PK__biciclet__F77125522EDCCE9E");
+                    .HasName("PK__biciclet__F77125520BE8CE82");
 
                 entity.ToTable("bicicletarios");
 
@@ -95,7 +95,7 @@ namespace Senai_ProjetoAvanade_webAPI.Context
             modelBuilder.Entity<Reserva>(entity =>
             {
                 entity.HasKey(e => e.IdReserva)
-                    .HasName("PK__reservas__94D104C8A08BE53E");
+                    .HasName("PK__reservas__94D104C813F73648");
 
                 entity.ToTable("reservas");
 
@@ -125,22 +125,22 @@ namespace Senai_ProjetoAvanade_webAPI.Context
                 entity.HasOne(d => d.IdUsuarioNavigation)
                     .WithMany(p => p.Reservas)
                     .HasForeignKey(d => d.IdUsuario)
-                    .HasConstraintName("FK__reservas__idUsua__45F365D3");
+                    .HasConstraintName("FK__reservas__idUsua__33D4B598");
 
                 entity.HasOne(d => d.IdVagaNavigation)
                     .WithMany(p => p.Reservas)
                     .HasForeignKey(d => d.IdVaga)
-                    .HasConstraintName("FK__reservas__idVaga__46E78A0C");
+                    .HasConstraintName("FK__reservas__idVaga__34C8D9D1");
             });
 
             modelBuilder.Entity<TipoUsuario>(entity =>
             {
                 entity.HasKey(e => e.IdTipoUsuario)
-                    .HasName("PK__tipoUsua__03006BFF65C0E9BB");
+                    .HasName("PK__tipoUsua__03006BFF3E73C841");
 
                 entity.ToTable("tipoUsuario");
 
-                entity.HasIndex(e => e.TipoUsuario1, "UQ__tipoUsua__A9585C056CCD3031")
+                entity.HasIndex(e => e.TipoUsuario1, "UQ__tipoUsua__A9585C053531AF58")
                     .IsUnique();
 
                 entity.Property(e => e.IdTipoUsuario).HasColumnName("idTipoUsuario");
@@ -155,14 +155,14 @@ namespace Senai_ProjetoAvanade_webAPI.Context
             modelBuilder.Entity<Usuario>(entity =>
             {
                 entity.HasKey(e => e.IdUsuario)
-                    .HasName("PK__usuarios__645723A6207BE5B2");
+                    .HasName("PK__usuarios__645723A6EA2CD452");
 
                 entity.ToTable("usuarios");
 
-                entity.HasIndex(e => e.Email, "UQ__usuarios__AB6E61643F9CA499")
+                entity.HasIndex(e => e.Email, "UQ__usuarios__AB6E6164665CA579")
                     .IsUnique();
 
-                entity.HasIndex(e => e.Cpf, "UQ__usuarios__D836E71F668B115F")
+                entity.HasIndex(e => e.Cpf, "UQ__usuarios__D836E71F32E069B0")
                     .IsUnique();
 
                 entity.Property(e => e.IdUsuario).HasColumnName("idUsuario");
@@ -215,13 +215,13 @@ namespace Senai_ProjetoAvanade_webAPI.Context
                 entity.HasOne(d => d.IdTipoUsuarioNavigation)
                     .WithMany(p => p.Usuarios)
                     .HasForeignKey(d => d.IdTipoUsuario)
-                    .HasConstraintName("FK__usuarios__idTipo__3B75D760");
+                    .HasConstraintName("FK__usuarios__idTipo__29572725");
             });
 
             modelBuilder.Entity<Vaga>(entity =>
             {
                 entity.HasKey(e => e.IdVaga)
-                    .HasName("PK__vagas__02E6F4AA2BF091AD");
+                    .HasName("PK__vagas__02E6F4AABB12C6C2");
 
                 entity.ToTable("vagas");
 
@@ -236,7 +236,7 @@ namespace Senai_ProjetoAvanade_webAPI.Context
                 entity.HasOne(d => d.IdBicicletarioNavigation)
                     .WithMany(p => p.Vagas)
                     .HasForeignKey(d => d.IdBicicletario)
-                    .HasConstraintName("FK__vagas__idBicicle__4222D4EF");
+                    .HasConstraintName("FK__vagas__idBicicle__300424B4");
             });
 
             OnModelCreatingPartial(modelBuilder);

@@ -31,7 +31,8 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
         {
             try
             {
-                _reservaRepository.Cadastrar(NovaReserva);
+                int id = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
+                _reservaRepository.Cadastrar(NovaReserva, id);
 
                 return StatusCode(201);
             }

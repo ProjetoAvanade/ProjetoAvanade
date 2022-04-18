@@ -91,6 +91,10 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
             {
                 int id = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
                 Usuario usuarioteste = _context.AtualizarSaldo(teste, id);
+                if (usuarioteste == null)
+                {
+                    return BadRequest(new {mensagem = "Quantidade de pontos insuficiente"  });
+                }
                 return Ok( new {Saldo_Atual =  usuarioteste.Saldo, Pontos = usuarioteste.Pontos});
                 
             }

@@ -78,7 +78,7 @@
             <param name="id">Id da vaga a ser buscada</param>
             <param name="status_novo">Novo valor para o status dessa vaga</param>
         </member>
-        <member name="M:Senai_ProjetoAvanade_webAPI.Interfaces.IReservaRepository.Cadastrar(Senai_ProjetoAvanade_webAPI.ViewModels.reservacadasViewModel)">
+        <member name="M:Senai_ProjetoAvanade_webAPI.Interfaces.IReservaRepository.Cadastrar(Senai_ProjetoAvanade_webAPI.ViewModels.reservacadasViewModel,System.Int32)">
             <summary>
             Método para criar uma nova reserva de uma vaga
             </summary>
