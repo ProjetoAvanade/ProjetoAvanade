@@ -34,10 +34,10 @@ namespace Senai_ProjetoAvanade_webAPI.Repositories
 
                 TimeSpan Diff_dates = Convert.ToDateTime(reservaBuscada.FechaTrava).Subtract(Convert.ToDateTime(reservaBuscada.AbreTrava));
 
-                for (int i = 0; i < Convert.ToDouble(Diff_dates); i++)
-                {
-                    reservaBuscada.Preco = i * Convert.ToDecimal(3.75);
-                }
+                //double diferenca = Convert.ToDouble(Diff_dates);
+
+
+                reservaBuscada.Preco = Convert.ToDecimal(Diff_dates.TotalMinutes * 0.0625);
                 //reservaBuscada.Preco = ReservaAtualizada.Preco;
                 reservaBuscada.StatusPagamento = ReservaAtualizada.StatusPagamento;
             }
@@ -45,6 +45,37 @@ namespace Senai_ProjetoAvanade_webAPI.Repositories
             ctx.Reservas.Update(reservaBuscada);
 
             ctx.SaveChanges();
+        }
+
+        public Usuario AtualizarPontos(int id, Usuario teste)
+        {
+            List<Reserva> reservabuscada = ctx.Reservas.Where(i => i.IdUsuario == id).ToList();
+
+            int tamanho = reservabuscada.Count;
+
+            for (int i = 0; i == tamanho; i++)
+            {
+                if (reservabuscada[i].StatusPagamento == true)
+                {
+
+                    if (reservabuscada[i].FechaTrava == DateTime.Now)
+                    {
+                        decimal valor_pago = Convert.ToDecimal(reservabuscada[i].Preco);
+
+                        decimal novos_pontos = (valor_pago / 2);
+
+                        Usuario usuario = teste;
+
+                        teste.Pontos = Convert.ToInt32(novos_pontos);
+
+                        ctx.Usuarios.Update(teste);
+
+                        ctx.SaveChanges();
+
+                        return teste;
+                    }
+                }
+            }
         }
 
         public void Cadastrar(reservacadasViewModel novareserva, int id)

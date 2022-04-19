@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Senai_ProjetoAvanade_webAPI.Domains;
 using Senai_ProjetoAvanade_webAPI.Interfaces;
 using Senai_ProjetoAvanade_webAPI.ViewModels;
 using System;
@@ -16,9 +17,17 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
     {
         private readonly IReservaRepository _reservaRepository;
 
-        public ReservaController(IReservaRepository reserva)
+        private readonly IUsuarioRepository _usuarioRepository;
+
+        //public ReservaController(IReservaRepository reserva)
+        //{
+        //    _reservaRepository = reserva;
+        //}
+
+        public ReservaController(IReservaRepository reserva, IUsuarioRepository usuario)
         {
             _reservaRepository = reserva;
+            _usuarioRepository = usuario;
         }
 
         /// <summary>
@@ -85,6 +94,26 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
                 return BadRequest(new { 
                 mensage = "Usuario precisa estar logado para ver as suas reservas", ex
                 });
+            }
+        }
+
+        [HttpPut]
+        public IActionResult AtualizarPontos()
+        {
+            try
+            {
+                int id = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
+                Usuario teste = _usuarioRepository.BuscarId(id);
+                if (_reservaRepository.AtualizarPontos(id, teste) == null)
+                {
+                    return BadRequest(new { mensagem = "Reserva não encontrada ou pagamento não aprovado"});
+                }
+                return Ok(teste);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex);
+                throw;
             }
         }
     }

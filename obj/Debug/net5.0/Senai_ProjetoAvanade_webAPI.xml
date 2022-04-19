@@ -98,6 +98,13 @@
             <param name="id">Id do usuario logado</param>
             <returns>Uma lista de reservas</returns>
         </member>
+        <member name="M:Senai_ProjetoAvanade_webAPI.Interfaces.IReservaRepository.AtualizarPontos(System.Int32,Senai_ProjetoAvanade_webAPI.Domains.Usuario)">
+            <summary>
+            Metodo responsavel pela atualizacao de Pontos em uma conta de usuarios após o pagamento
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
         <member name="M:Senai_ProjetoAvanade_webAPI.Interfaces.IUsuarioRepository.Login(System.String,System.String)">
             <summary>
             Metodo responsavel pelo login do usuario
