@@ -47,35 +47,29 @@ namespace Senai_ProjetoAvanade_webAPI.Repositories
             ctx.SaveChanges();
         }
 
-        public Usuario AtualizarPontos(int id, Usuario teste)
+        public Usuario AtualizarPontos(int id)
         {
-            List<Reserva> reservabuscada = ctx.Reservas.Where(i => i.IdUsuario == id).ToList();
+            //List <Reserva> reservabuscada = ctx.Reservas.Where(i => i.IdUsuario == id).ToList();
 
-            int tamanho = reservabuscada.Count;
+            List <Reserva> reservabuscada = ctx.Reservas.Where(i => i.IdUsuario == id && i.StatusPagamento == true).ToList();
+            reservabuscada.Reverse();
 
-            for (int i = 0; i == tamanho; i++)
-            {
-                if (reservabuscada[i].StatusPagamento == true)
-                {
 
-                    if (reservabuscada[i].FechaTrava == DateTime.Now)
-                    {
-                        decimal valor_pago = Convert.ToDecimal(reservabuscada[i].Preco);
 
-                        decimal novos_pontos = (valor_pago / 2);
+            Usuario teste = ctx.Usuarios.FirstOrDefault(c => c.IdUsuario == id);
 
-                        Usuario usuario = teste;
+            
+            decimal valor_pago = Convert.ToDecimal(reservabuscada[0].Preco);
 
-                        teste.Pontos = Convert.ToInt32(novos_pontos);
+            decimal novos_pontos = (valor_pago / 2);
 
-                        ctx.Usuarios.Update(teste);
+            teste.Pontos = teste.Pontos + Convert.ToInt32(novos_pontos);
 
-                        ctx.SaveChanges();
+            ctx.Usuarios.Update(teste);
 
-                        return teste;
-                    }
-                }
-            }
+            ctx.SaveChanges();
+                    
+            return teste;
         }
 
         public void Cadastrar(reservacadasViewModel novareserva, int id)

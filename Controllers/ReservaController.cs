@@ -103,17 +103,17 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
             try
             {
                 int id = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
-                Usuario teste = _usuarioRepository.BuscarId(id);
-                if (_reservaRepository.AtualizarPontos(id, teste) == null)
+                Usuario teste = _reservaRepository.AtualizarPontos(id);
+
+                if (teste == null)
                 {
-                    return BadRequest(new { mensagem = "Reserva não encontrada ou pagamento não aprovado"});
+                    return BadRequest(new { mensagem = "Reserva não encontrada" });
                 }
                 return Ok(teste);
             }
             catch (Exception ex)
             {
                 return BadRequest(ex);
-                throw;
             }
         }
     }

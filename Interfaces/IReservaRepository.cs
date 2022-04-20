@@ -32,8 +32,8 @@ namespace Senai_ProjetoAvanade_webAPI.Interfaces
         /// <summary>
         /// Metodo responsavel pela atualizacao de Pontos em uma conta de usuarios após o pagamento
         /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        Usuario AtualizarPontos(int id, Usuario teste);
+        /// <param name="id">Id do usuario atual logado</param>
+        /// <returns>As informacoes do usuario logado</returns>
+        Usuario AtualizarPontos(int id);
     }
 }
