@@ -43,6 +43,7 @@ CREATE TABLE bicicletarios(
 	cidade VARCHAR(40) NOT NULL,
 	longitude VARCHAR(10),
 	latitude VARCHAR(10),
+	latlong GEOGRAPHY NOT NULL,
 	cep VARCHAR(10) NOT NULL,
 	horarioAberto TIME,
 	horarioFechado TIME,
