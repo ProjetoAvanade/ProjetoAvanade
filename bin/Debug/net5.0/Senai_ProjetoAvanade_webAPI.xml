@@ -50,6 +50,12 @@
             </summary>
             <returns>Uma lista de reservas</returns>
         </member>
+        <member name="M:Senai_ProjetoAvanade_webAPI.Controllers.ReservaController.AtualizarPontos">
+            <summary>
+            Metodo responsavel por atualizacar os pontos do usuario logado após o fechamento de uma corrida
+            </summary>
+            <returns>Os novos pontos do usuario</returns>
+        </member>
         <member name="M:Senai_ProjetoAvanade_webAPI.Controllers.UsuarioController.Cadastrar(Senai_ProjetoAvanade_webAPI.ViewModels.usuarioViewModel,Microsoft.AspNetCore.Http.IFormFile)">
             <summary>
             Metodo responsavel pelo cadastro de usuarios
@@ -63,6 +69,13 @@
             Metodo para buscar informações de um usuario especifico
             </summary>
             <returns>Usuario com o id igual ao enviado</returns>
+        </member>
+        <member name="M:Senai_ProjetoAvanade_webAPI.Controllers.UsuarioController.AtualizarSaldo(Senai_ProjetoAvanade_webAPI.ViewModels.saldoViewModel)">
+            <summary>
+            Metodo responsavel por atualizar o saldo da conta de um usuario
+            </summary>
+            <param name="teste">novo saldo</param>
+            <returns>Novo saldo na conta</returns>
         </member>
         <member name="M:Senai_ProjetoAvanade_webAPI.Controllers.VagasController.ListarTodas(System.Int32)">
             <summary>
@@ -105,6 +118,12 @@
             <param name="id">Id do usuario atual logado</param>
             <returns>As informacoes do usuario logado</returns>
         </member>
+        <member name="M:Senai_ProjetoAvanade_webAPI.Interfaces.IReservaRepository.Listar_Lucros">
+            <summary>
+            Metodo responsavel por listar os lucros da aplicacao
+            </summary>
+            <returns>Uma lista de reservas</returns>
+        </member>
         <member name="M:Senai_ProjetoAvanade_webAPI.Interfaces.IUsuarioRepository.Login(System.String,System.String)">
             <summary>
             Metodo responsavel pelo login do usuario
@@ -125,6 +144,14 @@
             </summary>
             <param name="id">Id a ser buscado</param>
             <returns>Um usuario especifico</returns>
+        </member>
+        <member name="M:Senai_ProjetoAvanade_webAPI.Interfaces.IUsuarioRepository.AtualizarSaldo(Senai_ProjetoAvanade_webAPI.ViewModels.saldoViewModel,System.Int32)">
+            <summary>
+            Metodo responsavel pela atulizacao de saldo na conta
+            </summary>
+            <param name="teste">Novo valor de saldo</param>
+            <param name="id">Id do usuario logado</param>
+            <returns></returns>
         </member>
         <member name="M:Senai_ProjetoAvanade_webAPI.Interfaces.IVagasRepository.ListarTodas(System.Int32)">
             <summary>

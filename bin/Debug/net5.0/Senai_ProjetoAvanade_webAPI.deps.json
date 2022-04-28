@@ -34,12 +34,14 @@
       "Senai_ProjetoAvanade_webAPI/1.0.0": {
         "dependencies": {
           "BCrypt.Net-Next": "4.0.3",
+          "GeoCoordinate.NetCore": "1.0.0.1",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "5.0.15",
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "5.0.15",
-          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.15",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.16",
           "Microsoft.EntityFrameworkCore.SqlServer.Design": "1.1.6",
           "Microsoft.EntityFrameworkCore.Tools": "5.0.15",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "5.0.2",
+          "NetTopologySuite": "2.4.0",
           "Newtonsoft.Json": "13.0.1",
           "Swashbuckle.AspNetCore": "6.3.0",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
@@ -340,6 +342,17 @@
         },
         "compile": {
           "lib/net5.0/BCrypt.Net-Next.dll": {}
+        }
+      },
+      "GeoCoordinate.NetCore/1.0.0.1": {
+        "runtime": {
+          "lib/netstandard1.6/GeoCoordinate.NetCore.dll": {
+            "assemblyVersion": "1.0.0.1",
+            "fileVersion": "1.0.0.1"
+          }
+        },
+        "compile": {
+          "lib/netstandard1.6/GeoCoordinate.NetCore.dll": {}
         }
       },
       "Humanizer.Core/2.8.26": {
@@ -763,10 +776,10 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore/5.0.15": {
+      "Microsoft.EntityFrameworkCore/5.0.16": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Abstractions": "5.0.15",
-          "Microsoft.EntityFrameworkCore.Analyzers": "5.0.15",
+          "Microsoft.EntityFrameworkCore.Abstractions": "5.0.16",
+          "Microsoft.EntityFrameworkCore.Analyzers": "5.0.16",
           "Microsoft.Extensions.Caching.Memory": "5.0.0",
           "Microsoft.Extensions.DependencyInjection": "5.0.2",
           "Microsoft.Extensions.Logging": "5.0.0",
@@ -776,31 +789,31 @@
         },
         "runtime": {
           "lib/netstandard2.1/Microsoft.EntityFrameworkCore.dll": {
-            "assemblyVersion": "5.0.15.0",
-            "fileVersion": "5.0.1522.10812"
+            "assemblyVersion": "5.0.16.0",
+            "fileVersion": "5.0.1622.16102"
           }
         },
         "compile": {
           "lib/netstandard2.1/Microsoft.EntityFrameworkCore.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Abstractions/5.0.15": {
+      "Microsoft.EntityFrameworkCore.Abstractions/5.0.16": {
         "runtime": {
           "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Abstractions.dll": {
-            "assemblyVersion": "5.0.15.0",
-            "fileVersion": "5.0.1522.10812"
+            "assemblyVersion": "5.0.16.0",
+            "fileVersion": "5.0.1622.16102"
           }
         },
         "compile": {
           "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Abstractions.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Analyzers/5.0.15": {},
+      "Microsoft.EntityFrameworkCore.Analyzers/5.0.16": {},
       "Microsoft.EntityFrameworkCore.Design/5.0.15": {
         "dependencies": {
           "Humanizer.Core": "2.8.26",
           "Microsoft.CSharp": "4.7.0",
-          "Microsoft.EntityFrameworkCore.Relational": "5.0.15"
+          "Microsoft.EntityFrameworkCore.Relational": "5.0.16"
         },
         "runtime": {
           "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Design.dll": {
@@ -809,15 +822,15 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.Relational/5.0.15": {
+      "Microsoft.EntityFrameworkCore.Relational/5.0.16": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "5.0.15",
+          "Microsoft.EntityFrameworkCore": "5.0.16",
           "Microsoft.Extensions.Configuration.Abstractions": "5.0.0"
         },
         "runtime": {
           "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Relational.dll": {
-            "assemblyVersion": "5.0.15.0",
-            "fileVersion": "5.0.1522.10812"
+            "assemblyVersion": "5.0.16.0",
+            "fileVersion": "5.0.1622.16102"
           }
         },
         "compile": {
@@ -826,7 +839,7 @@
       },
       "Microsoft.EntityFrameworkCore.Relational.Design/1.1.6": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Relational": "5.0.15",
+          "Microsoft.EntityFrameworkCore.Relational": "5.0.16",
           "NETStandard.Library": "1.6.1"
         },
         "runtime": {
@@ -839,15 +852,15 @@
           "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Relational.Design.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.SqlServer/5.0.15": {
+      "Microsoft.EntityFrameworkCore.SqlServer/5.0.16": {
         "dependencies": {
           "Microsoft.Data.SqlClient": "2.0.1",
-          "Microsoft.EntityFrameworkCore.Relational": "5.0.15"
+          "Microsoft.EntityFrameworkCore.Relational": "5.0.16"
         },
         "runtime": {
           "lib/netstandard2.1/Microsoft.EntityFrameworkCore.SqlServer.dll": {
-            "assemblyVersion": "5.0.15.0",
-            "fileVersion": "5.0.1522.10812"
+            "assemblyVersion": "5.0.16.0",
+            "fileVersion": "5.0.1622.16102"
           }
         },
         "compile": {
@@ -857,7 +870,7 @@
       "Microsoft.EntityFrameworkCore.SqlServer.Design/1.1.6": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Relational.Design": "1.1.6",
-          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.15",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.16",
           "NETStandard.Library": "1.6.1"
         },
         "runtime": {
@@ -1227,6 +1240,20 @@
           "System.Threading.Timer": "4.3.0",
           "System.Xml.ReaderWriter": "4.3.0",
           "System.Xml.XDocument": "4.3.0"
+        }
+      },
+      "NetTopologySuite/2.4.0": {
+        "dependencies": {
+          "System.Memory": "4.5.4"
+        },
+        "runtime": {
+          "lib/netstandard2.0/NetTopologySuite.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/NetTopologySuite.dll": {}
         }
       },
       "Newtonsoft.Json/13.0.1": {
@@ -3987,6 +4014,13 @@
       "path": "bcrypt.net-next/4.0.3",
       "hashPath": "bcrypt.net-next.4.0.3.nupkg.sha512"
     },
+    "GeoCoordinate.NetCore/1.0.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VrR5MLkh0u2qka79JcQ/GUrgHwGidayCA7nKy2430qYX/JHdrHLgwp1MuBTSsygWs0s2V6GQ0Hp8HUMatHiWFw==",
+      "path": "geocoordinate.netcore/1.0.0.1",
+      "hashPath": "geocoordinate.netcore.1.0.0.1.nupkg.sha512"
+    },
     "Humanizer.Core/2.8.26": {
       "type": "package",
       "serviceable": true,
@@ -4113,26 +4147,26 @@
       "path": "microsoft.data.sqlclient.sni.runtime/2.0.1",
       "hashPath": "microsoft.data.sqlclient.sni.runtime.2.0.1.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore/5.0.15": {
+    "Microsoft.EntityFrameworkCore/5.0.16": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ThCWW0PV3EgUtgOsSHyNsOdJCzMTAPLDf31CHV0YG3NA45vRNJYyas9JVwmQbNg3ZaFR5UOJd4XlaKBcHs10ZA==",
-      "path": "microsoft.entityframeworkcore/5.0.15",
-      "hashPath": "microsoft.entityframeworkcore.5.0.15.nupkg.sha512"
+      "sha512": "sha512-niMGaRvTPPGAhuhKxFdmdfeW5Vo6rvhNXy2vnRotC7ToR/1ST6iDqZCIvW4L/Pt2+ISiFbvcqRQIE9MrNSMUZQ==",
+      "path": "microsoft.entityframeworkcore/5.0.16",
+      "hashPath": "microsoft.entityframeworkcore.5.0.16.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore.Abstractions/5.0.15": {
+    "Microsoft.EntityFrameworkCore.Abstractions/5.0.16": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-dI4246ydDdlwgZJ/9XD+VN2NpnIN118hrupp5TS+vStPmHZrCEo5YLjn9yfch7uta4MtBrVdVDBq6dBNBFWD5w==",
-      "path": "microsoft.entityframeworkcore.abstractions/5.0.15",
-      "hashPath": "microsoft.entityframeworkcore.abstractions.5.0.15.nupkg.sha512"
+      "sha512": "sha512-nGESdyRnKGQ0PBUBrtVwGz3U13/C7RKcOctps2WozCGo5fHnQmcVtZ23mYc3Ri1LSMY+l4vLblBPJUzRaPaAWA==",
+      "path": "microsoft.entityframeworkcore.abstractions/5.0.16",
+      "hashPath": "microsoft.entityframeworkcore.abstractions.5.0.16.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore.Analyzers/5.0.15": {
+    "Microsoft.EntityFrameworkCore.Analyzers/5.0.16": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-QfJBhr49Jmvt+zJf1VPSBPq2ZPY5PlpiDSF3UFV37joyKiWMDyEsNTHd3RLFzagC4k8cmSKTgk+7Y49XwDvPJQ==",
-      "path": "microsoft.entityframeworkcore.analyzers/5.0.15",
-      "hashPath": "microsoft.entityframeworkcore.analyzers.5.0.15.nupkg.sha512"
+      "sha512": "sha512-BiSrqLpJ6dv6xOH1xuHG/85edPfQo5DbuUZJqXNCOm3DD9BjnxaeVYnl2EUdadEUbCTTNVhXT0iKnaOpD5bv6A==",
+      "path": "microsoft.entityframeworkcore.analyzers/5.0.16",
+      "hashPath": "microsoft.entityframeworkcore.analyzers.5.0.16.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore.Design/5.0.15": {
       "type": "package",
@@ -4141,12 +4175,12 @@
       "path": "microsoft.entityframeworkcore.design/5.0.15",
       "hashPath": "microsoft.entityframeworkcore.design.5.0.15.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore.Relational/5.0.15": {
+    "Microsoft.EntityFrameworkCore.Relational/5.0.16": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-zE8zWanIxN2p9VyhtD6wFZrLEwqxJgBPzWJqF3r+ojzQtjMo+F9nKh36LpRUU8oeqHNXc7gZMPuGeGeYLCtV2g==",
-      "path": "microsoft.entityframeworkcore.relational/5.0.15",
-      "hashPath": "microsoft.entityframeworkcore.relational.5.0.15.nupkg.sha512"
+      "sha512": "sha512-B1ux0Pf1tTo7AXRldxInBWlFVm0/SVdV/7wSBxUmwy+uRO4oQCIJk69ot1DbL8YCQKjSMMB6IZkRTK95Haetow==",
+      "path": "microsoft.entityframeworkcore.relational/5.0.16",
+      "hashPath": "microsoft.entityframeworkcore.relational.5.0.16.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore.Relational.Design/1.1.6": {
       "type": "package",
@@ -4155,12 +4189,12 @@
       "path": "microsoft.entityframeworkcore.relational.design/1.1.6",
       "hashPath": "microsoft.entityframeworkcore.relational.design.1.1.6.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore.SqlServer/5.0.15": {
+    "Microsoft.EntityFrameworkCore.SqlServer/5.0.16": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-lFnEMvLufq3xIuhk3efmMUJvRNxOLlAKl8NNYqvbbtDZtzVdgZR/dZJAGcwZT6AxSGNM29LMDXYY+ydADWcggg==",
-      "path": "microsoft.entityframeworkcore.sqlserver/5.0.15",
-      "hashPath": "microsoft.entityframeworkcore.sqlserver.5.0.15.nupkg.sha512"
+      "sha512": "sha512-CMfZHL4vdQD5JUYdmcA90LkuV9XkNF97hhSBUzcZPZ7VFgQR7etvn9NVsDvoi+Gn08p1lU4KsCJw7B3Ye5GlVQ==",
+      "path": "microsoft.entityframeworkcore.sqlserver/5.0.16",
+      "hashPath": "microsoft.entityframeworkcore.sqlserver.5.0.16.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore.SqlServer.Design/1.1.6": {
       "type": "package",
@@ -4392,6 +4426,13 @@
       "sha512": "sha512-WcSp3+vP+yHNgS8EV5J7pZ9IRpeDuARBPN28by8zqff1wJQXm26PVU8L3/fYLBJVU7BtDyqNVWq2KlCVvSSR4A==",
       "path": "netstandard.library/1.6.1",
       "hashPath": "netstandard.library.1.6.1.nupkg.sha512"
+    },
+    "NetTopologySuite/2.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dGA7ZcCRn664AcusGJdva5r+fvQ2mfUAaBX9QLC3fwtiFi05fEOLqzZ5tTg+MWF0xCy5iCaEDYAcxnB2eLJMdQ==",
+      "path": "nettopologysuite/2.4.0",
+      "hashPath": "nettopologysuite.2.4.0.nupkg.sha512"
     },
     "Newtonsoft.Json/13.0.1": {
       "type": "package",

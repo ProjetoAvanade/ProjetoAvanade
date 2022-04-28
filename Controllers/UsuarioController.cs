@@ -83,7 +83,12 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
 
         }
 
-        //[Authorize(Roles = "2")]
+        /// <summary>
+        /// Metodo responsavel por atualizar o saldo da conta de um usuario
+        /// </summary>
+        /// <param name="teste">novo saldo</param>
+        /// <returns>Novo saldo na conta</returns>
+        [Authorize(Roles = "2")]
         [HttpPut]
         public IActionResult AtualizarSaldo(saldoViewModel teste)
         {

@@ -17,17 +17,9 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
     {
         private readonly IReservaRepository _reservaRepository;
 
-        private readonly IUsuarioRepository _usuarioRepository;
-
-        //public ReservaController(IReservaRepository reserva)
-        //{
-        //    _reservaRepository = reserva;
-        //}
-
-        public ReservaController(IReservaRepository reserva, IUsuarioRepository usuario)
+        public ReservaController(IReservaRepository reserva)
         {
             _reservaRepository = reserva;
-            _usuarioRepository = usuario;
         }
 
         /// <summary>
@@ -97,6 +89,10 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
             }
         }
 
+        /// <summary>
+        /// Metodo responsavel por atualizacar os pontos do usuario logado após o fechamento de uma corrida
+        /// </summary>
+        /// <returns>Os novos pontos do usuario</returns>
         [HttpPut]
         public IActionResult AtualizarPontos()
         {
@@ -113,6 +109,20 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
             }
             catch (Exception ex)
             {
+                return BadRequest(ex);
+            }
+        }
+
+        [HttpGet("/lucros")]
+        public IActionResult Listar_Lucros()
+        {
+            try
+            {
+                return Ok(_reservaRepository.Listar_Lucros());
+            }
+            catch (Exception ex)
+            {
+
                 return BadRequest(ex);
             }
         }

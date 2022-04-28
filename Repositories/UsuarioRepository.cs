@@ -1,11 +1,13 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using NetTopologySuite;
 using Senai_ProjetoAvanade_webAPI.Context;
 using Senai_ProjetoAvanade_webAPI.Domains;
 using Senai_ProjetoAvanade_webAPI.Interfaces;
 using Senai_ProjetoAvanade_webAPI.Utils;
 using Senai_ProjetoAvanade_webAPI.ViewModels;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Senai_ProjetoAvanade_webAPI.Repositories
@@ -88,6 +90,17 @@ namespace Senai_ProjetoAvanade_webAPI.Repositories
 
             ctx.SaveChanges();
         }
+
+        //public List<Bicicletario> ListarPontosProxixmos(double Latitude, double Longitude, int metros = 1000)
+        //{
+        //    var geometryFactory = NtsGeometryServices.Instance.CreateGeometryFactory();
+        //    var myLocation = geometryFactory.CreatePoint(new NetTopologySuite.Geometries.Coordinate(Latitude, Longitude));
+
+        //    var locais = ctx.Bicicletarios.ToList();
+
+        //    return locais.OrderBy(x => x.Latitude.Distance(myLocation)).Where(x => x.Latitude.IsWithinDistance(myLocation, metros)).ToList();
+
+        //}
 
         public Usuario Login(string email, string senha)
         {

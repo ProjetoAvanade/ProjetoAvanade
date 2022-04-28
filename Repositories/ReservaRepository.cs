@@ -86,6 +86,18 @@ namespace Senai_ProjetoAvanade_webAPI.Repositories
             ctx.SaveChanges();
         }
 
+        public List<Reserva> Listar_Lucros()
+        {
+            List<Reserva> valores_pagos = ctx.Reservas.Select(c => new Reserva()
+            {
+                IdReserva = c.IdReserva,
+                Preco = c.Preco,
+                FechaTrava = c.FechaTrava
+            }).ToList();
+
+            return valores_pagos;
+        }
+
         public List<Reserva> Listar_Minhas(int id)
         {
             return ctx.Reservas.Include(c => c.IdVagaNavigation).Include(c => c.IdUsuarioNavigation)
