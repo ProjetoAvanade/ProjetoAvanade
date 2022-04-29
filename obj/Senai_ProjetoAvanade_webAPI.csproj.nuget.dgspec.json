@@ -44,6 +44,10 @@
               "target": "Package",
               "version": "[4.0.3, )"
             },
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.4.4, )"
+            },
             "GeoCoordinate.NetCore": {
               "target": "Package",
               "version": "[1.0.0.1, )"
