@@ -96,6 +96,7 @@
             Método para criar uma nova reserva de uma vaga
             </summary>
             <param name="novareserva">Nova reserva a ser realizada</param>
+            <param name="id">Id do usuario logado</param>>
         </member>
         <member name="M:Senai_ProjetoAvanade_webAPI.Interfaces.IReservaRepository.Atualizar(System.Int32,Senai_ProjetoAvanade_webAPI.ViewModels.reservaViewModel)">
             <summary>

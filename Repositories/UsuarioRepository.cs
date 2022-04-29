@@ -91,16 +91,16 @@ namespace Senai_ProjetoAvanade_webAPI.Repositories
             ctx.SaveChanges();
         }
 
-        //public List<Bicicletario> ListarPontosProxixmos(double Latitude, double Longitude, int metros = 1000)
-        //{
-        //    var geometryFactory = NtsGeometryServices.Instance.CreateGeometryFactory();
-        //    var myLocation = geometryFactory.CreatePoint(new NetTopologySuite.Geometries.Coordinate(Latitude, Longitude));
+        public List<Bicicletario> ListarPontosProxixmos(double Latitude, double Longitude, int metros = 1000)
+        {
+            var geometryFactory = NtsGeometryServices.Instance.CreateGeometryFactory();
+            var myLocation = geometryFactory.CreatePoint(new NetTopologySuite.Geometries.Coordinate(Latitude, Longitude));
 
-        //    var locais = ctx.Bicicletarios.ToList();
+            var locais = ctx.Bicicletarios.ToList();
 
-        //    return locais.OrderBy(x => x.Latitude.Distance(myLocation)).Where(x => x.Latitude.IsWithinDistance(myLocation, metros)).ToList();
+            return locais.OrderBy(x => x.Latlong.Distance(myLocation)).Where(x => x.Latlong.IsWithinDistance(myLocation, metros)).ToList();
 
-        //}
+        }
 
         public Usuario Login(string email, string senha)
         {

@@ -13,6 +13,7 @@ namespace Senai_ProjetoAvanade_webAPI.Interfaces
         /// Método para criar uma nova reserva de uma vaga
         /// </summary>
         /// <param name="novareserva">Nova reserva a ser realizada</param>
+        /// <param name="id">Id do usuario logado</param>>
         void Cadastrar(reservacadasViewModel novareserva, int id);
 
         /// <summary>

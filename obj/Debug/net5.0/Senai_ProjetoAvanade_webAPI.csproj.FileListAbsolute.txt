@@ -144,3 +144,6 @@ C:\Users\47073656808.INFOSCS\Desktop\ProjetoAvanade\obj\Debug\net5.0\Senai_Proje
 C:\Users\47073656808.INFOSCS\Desktop\ProjetoAvanade\obj\Debug\net5.0\Senai_ProjetoAvanade_webAPI.genruntimeconfig.cache
 C:\Users\47073656808.INFOSCS\Desktop\ProjetoAvanade\bin\Debug\net5.0\GeoCoordinate.NetCore.dll
 C:\Users\47073656808.INFOSCS\Desktop\ProjetoAvanade\bin\Debug\net5.0\NetTopologySuite.dll
+C:\Users\47073656808.INFOSCS\Desktop\ProjetoAvanade\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite.dll
+C:\Users\47073656808.INFOSCS\Desktop\ProjetoAvanade\bin\Debug\net5.0\NetTopologySuite.IO.SqlServerBytes.dll
+C:\Users\47073656808.INFOSCS\Desktop\ProjetoAvanade\obj\Debug\net5.0\EFCoreSqlServerNetTopologySuite.cs

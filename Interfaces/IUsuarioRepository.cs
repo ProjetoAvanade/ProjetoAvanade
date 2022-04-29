@@ -39,13 +39,7 @@ namespace Senai_ProjetoAvanade_webAPI.Interfaces
         /// <returns></returns>
         Usuario AtualizarSaldo(saldoViewModel teste, int id);
 
-        /// <summary>
-        /// Metodo responsavel pela ordenacao dos pontos pelos mais proximos
-        /// </summary>
-        /// <param name="Latitude">Latitude a ser comparada</param>
-        /// <param name="Longitude">Longitude a ser comparada</param>
-        /// <param name="metros">Raio de distancia dos locais mais proximos</param>
-        /// <returns></returns>
-        //List<Bicicletario> ListarPontosProxixmos(double Latitude, double Longitude, int metros = 1000);
+
+        List<Bicicletario> ListarPontosProxixmos(double Latitude, double Longitude, int metros = 1000);
     }
 }

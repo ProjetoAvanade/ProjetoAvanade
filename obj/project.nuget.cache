@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "x9p7kYKvyAVpWGilc8n7hFMP8BUC9lXx1mX81PuyC4hCro9w/XEiwOHjHAADSmEA9J//GrvPq3k1hNJaU9TwVg==",
+  "dgSpecHash": "7lZCW+l5N8G1qXQqoBOQO+IWnte5s+gUYmo0cQRrjEeST0cgoeQe0Bp1cQzHa4+GB3ZE5ZNb5TQPgBpchCI5+Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\47073656808.INFOSCS\\Desktop\\ProjetoAvanade\\Senai_ProjetoAvanade_webAPI.csproj",
   "expectedPackageFiles": [
@@ -32,6 +32,7 @@
     "C:\\Users\\47073656808.INFOSCS\\.nuget\\packages\\microsoft.entityframeworkcore.relational.design\\1.1.6\\microsoft.entityframeworkcore.relational.design.1.1.6.nupkg.sha512",
     "C:\\Users\\47073656808.INFOSCS\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\5.0.16\\microsoft.entityframeworkcore.sqlserver.5.0.16.nupkg.sha512",
     "C:\\Users\\47073656808.INFOSCS\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver.design\\1.1.6\\microsoft.entityframeworkcore.sqlserver.design.1.1.6.nupkg.sha512",
+    "C:\\Users\\47073656808.INFOSCS\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver.nettopologysuite\\5.0.16\\microsoft.entityframeworkcore.sqlserver.nettopologysuite.5.0.16.nupkg.sha512",
     "C:\\Users\\47073656808.INFOSCS\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\5.0.15\\microsoft.entityframeworkcore.tools.5.0.15.nupkg.sha512",
     "C:\\Users\\47073656808.INFOSCS\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\47073656808.INFOSCS\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\5.0.0\\microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",
@@ -65,6 +66,7 @@
     "C:\\Users\\47073656808.INFOSCS\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\47073656808.INFOSCS\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\47073656808.INFOSCS\\.nuget\\packages\\nettopologysuite\\2.4.0\\nettopologysuite.2.4.0.nupkg.sha512",
+    "C:\\Users\\47073656808.INFOSCS\\.nuget\\packages\\nettopologysuite.io.sqlserverbytes\\2.0.0\\nettopologysuite.io.sqlserverbytes.2.0.0.nupkg.sha512",
     "C:\\Users\\47073656808.INFOSCS\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\47073656808.INFOSCS\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
     "C:\\Users\\47073656808.INFOSCS\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",

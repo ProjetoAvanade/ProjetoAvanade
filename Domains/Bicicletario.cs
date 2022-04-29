@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using NetTopologySuite.Geometries;
 
 #nullable disable
 
@@ -20,6 +21,7 @@ namespace Senai_ProjetoAvanade_webAPI.Domains
         public string Cidade { get; set; }
         public string Longitude { get; set; }
         public string Latitude { get; set; }
+        public Point Latlong { get; set; }
         public string Cep { get; set; }
         public TimeSpan? HorarioAberto { get; set; }
         public TimeSpan? HorarioFechado { get; set; }
