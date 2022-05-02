@@ -85,6 +85,7 @@ namespace Senai_ProjetoAvanade_webAPI.Repositories
             usuarioteste.Senha = usuarionovo.Senha;
             usuarioteste.Cpf = usuarionovo.Cpf;
             usuarioteste.DataNascimento = usuarionovo.DataNascimento;
+            usuarioteste.Imagem = usuarionovo.Imagem;
             
             ctx.Usuarios.Add(usuarioteste);
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Spatial;
 using NetTopologySuite.Geometries;
 
 #nullable disable
