@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\luiz.cruz\\Desktop\\ProjetoAvanade\\Senai_ProjetoAvanade_webAPI.csproj": {}
+    "C:\\Users\\47073656808.INFOSCS\\Desktop\\ProjetoAvanade\\Senai_ProjetoAvanade_webAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\luiz.cruz\\Desktop\\ProjetoAvanade\\Senai_ProjetoAvanade_webAPI.csproj": {
+    "C:\\Users\\47073656808.INFOSCS\\Desktop\\ProjetoAvanade\\Senai_ProjetoAvanade_webAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\luiz.cruz\\Desktop\\ProjetoAvanade\\Senai_ProjetoAvanade_webAPI.csproj",
+        "projectUniqueName": "C:\\Users\\47073656808.INFOSCS\\Desktop\\ProjetoAvanade\\Senai_ProjetoAvanade_webAPI.csproj",
         "projectName": "Senai_ProjetoAvanade_webAPI",
-        "projectPath": "C:\\Users\\luiz.cruz\\Desktop\\ProjetoAvanade\\Senai_ProjetoAvanade_webAPI.csproj",
-        "packagesPath": "C:\\Users\\luiz.cruz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\luiz.cruz\\Desktop\\ProjetoAvanade\\obj\\",
+        "projectPath": "C:\\Users\\47073656808.INFOSCS\\Desktop\\ProjetoAvanade\\Senai_ProjetoAvanade_webAPI.csproj",
+        "packagesPath": "C:\\Users\\47073656808.INFOSCS\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\47073656808.INFOSCS\\Desktop\\ProjetoAvanade\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\luiz.cruz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\47073656808.INFOSCS\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -117,7 +117,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.407\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }
