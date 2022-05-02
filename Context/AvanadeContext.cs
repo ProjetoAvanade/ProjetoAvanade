@@ -28,7 +28,7 @@ namespace Senai_ProjetoAvanade_webAPI.Context
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Data Source=NOTE0113F1\\SQLEXPRESS; Initial Catalog=db-gp11; user id=sa; pwd=Senai@132;", x => x.UseNetTopologySuite());
+                optionsBuilder.UseSqlServer("Data Source=NOTE0113F1\\SQLEXPRESS; initial catalog=db-gp11; user Id=sa; pwd=Senai@132;", x => x.UseNetTopologySuite());
             }
         }
 
@@ -39,7 +39,7 @@ namespace Senai_ProjetoAvanade_webAPI.Context
             modelBuilder.Entity<Bicicletario>(entity =>
             {
                 entity.HasKey(e => e.IdBicicletario)
-                    .HasName("PK__biciclet__F7712552AB4F9493");
+                    .HasName("PK__biciclet__F7712552E2A2EAFF");
 
                 entity.ToTable("bicicletarios");
 
@@ -73,9 +73,8 @@ namespace Senai_ProjetoAvanade_webAPI.Context
                     .HasColumnName("latitude");
 
                 entity.Property(e => e.Latlong)
-                    .IsRequired()
-                    .HasColumnName("latlong")
-                    .HasColumnType("geography");
+                    .HasColumnType("geometry")
+                    .HasColumnName("latlong");
 
                 entity.Property(e => e.Longitude)
                     .HasMaxLength(10)
@@ -100,7 +99,7 @@ namespace Senai_ProjetoAvanade_webAPI.Context
             modelBuilder.Entity<Reserva>(entity =>
             {
                 entity.HasKey(e => e.IdReserva)
-                    .HasName("PK__reservas__94D104C8F477A715");
+                    .HasName("PK__reservas__94D104C8D89572ED");
 
                 entity.ToTable("reservas");
 
@@ -130,22 +129,22 @@ namespace Senai_ProjetoAvanade_webAPI.Context
                 entity.HasOne(d => d.IdUsuarioNavigation)
                     .WithMany(p => p.Reservas)
                     .HasForeignKey(d => d.IdUsuario)
-                    .HasConstraintName("FK__reservas__idUsua__45F365D3");
+                    .HasConstraintName("FK__reservas__idUsua__33D4B598");
 
                 entity.HasOne(d => d.IdVagaNavigation)
                     .WithMany(p => p.Reservas)
                     .HasForeignKey(d => d.IdVaga)
-                    .HasConstraintName("FK__reservas__idVaga__46E78A0C");
+                    .HasConstraintName("FK__reservas__idVaga__34C8D9D1");
             });
 
             modelBuilder.Entity<TipoUsuario>(entity =>
             {
                 entity.HasKey(e => e.IdTipoUsuario)
-                    .HasName("PK__tipoUsua__03006BFF83C6840C");
+                    .HasName("PK__tipoUsua__03006BFF0B011E91");
 
                 entity.ToTable("tipoUsuario");
 
-                entity.HasIndex(e => e.TipoUsuario1, "UQ__tipoUsua__A9585C051CB354B3")
+                entity.HasIndex(e => e.TipoUsuario1, "UQ__tipoUsua__A9585C0581252269")
                     .IsUnique();
 
                 entity.Property(e => e.IdTipoUsuario).HasColumnName("idTipoUsuario");
@@ -160,14 +159,14 @@ namespace Senai_ProjetoAvanade_webAPI.Context
             modelBuilder.Entity<Usuario>(entity =>
             {
                 entity.HasKey(e => e.IdUsuario)
-                    .HasName("PK__usuarios__645723A6720B2F5D");
+                    .HasName("PK__usuarios__645723A698D121C2");
 
                 entity.ToTable("usuarios");
 
-                entity.HasIndex(e => e.Email, "UQ__usuarios__AB6E6164745098D9")
+                entity.HasIndex(e => e.Email, "UQ__usuarios__AB6E6164D8DEF54E")
                     .IsUnique();
 
-                entity.HasIndex(e => e.Cpf, "UQ__usuarios__D836E71FFD67E359")
+                entity.HasIndex(e => e.Cpf, "UQ__usuarios__D836E71F960CC456")
                     .IsUnique();
 
                 entity.Property(e => e.IdUsuario).HasColumnName("idUsuario");
@@ -220,13 +219,13 @@ namespace Senai_ProjetoAvanade_webAPI.Context
                 entity.HasOne(d => d.IdTipoUsuarioNavigation)
                     .WithMany(p => p.Usuarios)
                     .HasForeignKey(d => d.IdTipoUsuario)
-                    .HasConstraintName("FK__usuarios__idTipo__3B75D760");
+                    .HasConstraintName("FK__usuarios__idTipo__29572725");
             });
 
             modelBuilder.Entity<Vaga>(entity =>
             {
                 entity.HasKey(e => e.IdVaga)
-                    .HasName("PK__vagas__02E6F4AAFC8F26EE");
+                    .HasName("PK__vagas__02E6F4AA8D07A5BC");
 
                 entity.ToTable("vagas");
 
@@ -241,7 +240,7 @@ namespace Senai_ProjetoAvanade_webAPI.Context
                 entity.HasOne(d => d.IdBicicletarioNavigation)
                     .WithMany(p => p.Vagas)
                     .HasForeignKey(d => d.IdBicicletario)
-                    .HasConstraintName("FK__vagas__idBicicle__4222D4EF");
+                    .HasConstraintName("FK__vagas__idBicicle__300424B4");
             });
 
             OnModelCreatingPartial(modelBuilder);

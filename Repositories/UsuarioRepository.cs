@@ -96,7 +96,7 @@ namespace Senai_ProjetoAvanade_webAPI.Repositories
             var geometryFactory = NtsGeometryServices.Instance.CreateGeometryFactory();
             var myLocation = geometryFactory.CreatePoint(new NetTopologySuite.Geometries.Coordinate(Latitude, Longitude));
 
-            var locais = ctx.Bicicletarios.ToList();
+            List<Bicicletario> locais = ctx.Bicicletarios.ToList();
 
             return locais.OrderBy(x => x.Latlong.Distance(myLocation)).Where(x => x.Latlong.IsWithinDistance(myLocation, metros)).ToList();
 
