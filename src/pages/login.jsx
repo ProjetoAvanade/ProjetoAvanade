@@ -35,7 +35,7 @@ export default class Login extends Component {
                         break;
                     default:
                         console.log('nn vai')
-                    break;
+                        break;
                 }
             }
 
@@ -57,22 +57,26 @@ export default class Login extends Component {
         return (
             <div className="container_tela">
                 <div className="banner_login">
-                    <div className="box_img">
-                        <img src={banner_login} alt="Moça andando de bicicleta" />
+                    <div>
+                        <img className='logo' src={logo_login} alt="A logo do nosso site" />
+                        <div className="box_img">
+                            <img src={banner_login} alt="Pessoa andando de bicicleta" />
+                        </div>
+                        <span>Teste</span>
                     </div>
                 </div>
                 <form onSubmit={this.efetuarlogin} className="box_form">
-                    <img src={logo_login} alt="A logo do nosso site" />
+
                     <div className="box_inputs">
 
                         <div className="box_input">
-                        <label for="Email" className="label_input">Email:</label>
-                        <input name="email" type="text" placeholder="Email" className="input_login" value={this.state.email} onChange={this.atualizaStateCampo} />
+                            <label for="Email" className="label_input">Email:</label>
+                            <input name="email" type="text" placeholder="Email" className="input_login" value={this.state.email} onChange={this.atualizaStateCampo} />
                         </div>
 
                         <div className="box_input">
-                        <label for="pass" className="label_input">Senha:</label>
-                        <input name="senha" type="password" placeholder="Senha" className="input_login" value={this.state.senha} onChange={this.atualizaStateCampo} />
+                            <label for="pass" className="label_input">Senha:</label>
+                            <input name="senha" type="password" placeholder="Senha" className="input_login" value={this.state.senha} onChange={this.atualizaStateCampo} />
                         </div>
 
                         <span className="Mensagem_erro">{this.state.MensagemErro}</span>
