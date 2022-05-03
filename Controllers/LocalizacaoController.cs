@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using NetTopologySuite;
 using NetTopologySuite.Geometries;
@@ -47,6 +48,13 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
             return dist;
         }
 
+        /// <summary>
+        /// Metodo responsavel pela listagem de pontos mais proximos da localizacao atual do usuario
+        /// </summary>
+        /// <param name="request">Argumentos para a requisicao</param>
+        /// <param name="cancellationToken"></param>
+        /// <returns>Uma lista de pontos do mais proximo pro mais longe</returns>
+        [Authorize(Roles = "2")]
         [HttpGet]
         public IActionResult Listar_Pontos_Proximos([FromQuery]LocalRequestDTO request, CancellationToken cancellationToken)
         {

@@ -93,6 +93,7 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
         /// Metodo responsavel por atualizacar os pontos do usuario logado após o fechamento de uma corrida
         /// </summary>
         /// <returns>Os novos pontos do usuario</returns>
+        [Authorize(Roles = "2")]
         [HttpPut]
         public IActionResult AtualizarPontos()
         {
@@ -113,6 +114,11 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
             }
         }
 
+        /// <summary>
+        /// Metodo responsavel pela listagem de lucros do sistema por mes
+        /// </summary>
+        /// <returns>Lista de lucro por mes</returns>
+        [Authorize(Roles = "1")]
         [HttpGet("/lucros")]
         public IActionResult Listar_Lucros()
         {

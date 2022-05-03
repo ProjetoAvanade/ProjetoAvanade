@@ -90,7 +90,7 @@ namespace Senai_ProjetoAvanade_webAPI
             });
 
             services.AddDbContext<AvanadeContext>(options =>
-                             options.UseSqlServer(Configuration.GetConnectionString("Default"))
+                             options.UseSqlServer(Configuration.GetConnectionString("Default"), x => x.UseNetTopologySuite())
                          );
 
 

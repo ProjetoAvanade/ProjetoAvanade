@@ -28,7 +28,7 @@ namespace Senai_ProjetoAvanade_webAPI.Context
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Data Source=DAREDE-000850\\SQLEXPRESS; initial catalog=db-gp11; user Id=sa; pwd=D@06341610;", x => x.UseNetTopologySuite());
+                optionsBuilder.UseSqlServer("Default", x => x.UseNetTopologySuite());
             }
         }
 
