@@ -39,7 +39,7 @@ namespace Senai_ProjetoAvanade_webAPI.Context
             modelBuilder.Entity<Bicicletario>(entity =>
             {
                 entity.HasKey(e => e.IdBicicletario)
-                    .HasName("PK__biciclet__F7712552727CFC12");
+                    .HasName("PK__biciclet__F7712552E2A2EAFF");
 
                 entity.ToTable("bicicletarios");
 
@@ -72,7 +72,9 @@ namespace Senai_ProjetoAvanade_webAPI.Context
                     .IsUnicode(false)
                     .HasColumnName("latitude");
 
-                entity.Property(e => e.Latlong).HasColumnName("latlong");
+                entity.Property(e => e.Latlong)
+                    .HasColumnType("geometry")
+                    .HasColumnName("latlong");
 
                 entity.Property(e => e.Longitude)
                     .HasMaxLength(10)
@@ -97,7 +99,8 @@ namespace Senai_ProjetoAvanade_webAPI.Context
             modelBuilder.Entity<Reserva>(entity =>
             {
                 entity.HasKey(e => e.IdReserva)
-                    .HasName("PK__reservas__94D104C8D0334095");
+                    .HasName("PK__reservas__94D104C8D89572ED");
+
 
                 entity.ToTable("reservas");
 
@@ -138,11 +141,11 @@ namespace Senai_ProjetoAvanade_webAPI.Context
             modelBuilder.Entity<TipoUsuario>(entity =>
             {
                 entity.HasKey(e => e.IdTipoUsuario)
-                    .HasName("PK__tipoUsua__03006BFF1C92B767");
+                    .HasName("PK__tipoUsua__03006BFF0B011E91");
 
                 entity.ToTable("tipoUsuario");
 
-                entity.HasIndex(e => e.TipoUsuario1, "UQ__tipoUsua__A9585C0559F1A72A")
+                entity.HasIndex(e => e.TipoUsuario1, "UQ__tipoUsua__A9585C0581252269")
                     .IsUnique();
 
                 entity.Property(e => e.IdTipoUsuario).HasColumnName("idTipoUsuario");
@@ -157,14 +160,14 @@ namespace Senai_ProjetoAvanade_webAPI.Context
             modelBuilder.Entity<Usuario>(entity =>
             {
                 entity.HasKey(e => e.IdUsuario)
-                    .HasName("PK__usuarios__645723A636F86F7E");
+                    .HasName("PK__usuarios__645723A698D121C2");
 
                 entity.ToTable("usuarios");
 
-                entity.HasIndex(e => e.Email, "UQ__usuarios__AB6E6164267EA037")
+                entity.HasIndex(e => e.Email, "UQ__usuarios__AB6E6164D8DEF54E")
                     .IsUnique();
 
-                entity.HasIndex(e => e.Cpf, "UQ__usuarios__D836E71FE751131A")
+                entity.HasIndex(e => e.Cpf, "UQ__usuarios__D836E71F960CC456")
                     .IsUnique();
 
                 entity.Property(e => e.IdUsuario).HasColumnName("idUsuario");
@@ -223,7 +226,7 @@ namespace Senai_ProjetoAvanade_webAPI.Context
             modelBuilder.Entity<Vaga>(entity =>
             {
                 entity.HasKey(e => e.IdVaga)
-                    .HasName("PK__vagas__02E6F4AA135B0E25");
+                    .HasName("PK__vagas__02E6F4AA8D07A5BC");
 
                 entity.ToTable("vagas");
 
