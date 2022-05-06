@@ -1,15 +1,12 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using NetTopologySuite;
 using NetTopologySuite.Geometries;
-using Senai_ProjetoAvanade_webAPI.DataTransferObject;
+using Senai_ProjetoAvanade_webAPI.ViewModels;
 using Senai_ProjetoAvanade_webAPI.Interfaces;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
-using System.Threading.Tasks;
+using Senai_ProjetoAvanade_webAPI.DataTransferObject;
 
 namespace Senai_ProjetoAvanade_webAPI.Controllers
 {
@@ -54,7 +51,7 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
         /// <param name="request">Argumentos para a requisicao</param>
         /// <param name="cancellationToken"></param>
         /// <returns>Uma lista de pontos do mais proximo pro mais longe</returns>
-        [Authorize(Roles = "2")]
+        //[Authorize(Roles = "2")]
         [HttpGet]
         public IActionResult Listar_Pontos_Proximos([FromQuery]LocalRequestDTO request, CancellationToken cancellationToken)
         {

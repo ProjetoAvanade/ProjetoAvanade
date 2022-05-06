@@ -39,7 +39,19 @@ namespace Senai_ProjetoAvanade_webAPI.Interfaces
         /// <returns></returns>
         Usuario AtualizarSaldo(saldoViewModel teste, int id);
 
-
+        /// <summary>
+        /// Metodo responsavel pela listagem de pontos com base na localizacao do usuario
+        /// </summary>
+        /// <param name="Latitude">Latitude atual do usuario</param>
+        /// <param name="Longitude">Longitude atual do usuario</param>
+        /// <param name="metros">Raio de busca dos pontos</param>
+        /// <returns>Lista de bicicletarios ordenada</returns>
         List<Bicicletario> ListarPontosProxixmos(double Latitude, double Longitude, int metros = 1000);
+
+        /// <summary>
+        /// Metodo responsavel por listar a quantidade de usuarios existente na aplicacao
+        /// </summary>
+        /// <returns>Lista de usuarios</returns>
+        List<Usuario> ListarQuantidadeUsuarios();
     }
 }

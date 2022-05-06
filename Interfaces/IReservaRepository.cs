@@ -41,6 +41,6 @@ namespace Senai_ProjetoAvanade_webAPI.Interfaces
         /// Metodo responsavel por listar os lucros da aplicacao
         /// </summary>
         /// <returns>Uma lista de reservas</returns>
-        List<Reserva> Listar_Lucros();
+        //dadosgraficoViewModel Listar_Lucros();
     }
 }

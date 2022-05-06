@@ -109,5 +109,24 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
                 return BadRequest(ex);
             }
         }
+
+        /// <summary>
+        /// Metodo responsavel por listar todos os usuarios do sistema
+        /// </summary>
+        /// <returns>Uma lista de usuarios</returns>
+        [Authorize(Roles = "1")]
+        [HttpGet("/usuarios/grafico")]
+        public IActionResult ListarUsuarios()
+        {
+            try 
+            {
+                return Ok(_context.ListarQuantidadeUsuarios());
+            }
+            catch (Exception eX)
+            {
+
+                return BadRequest(eX);
+            }
+        }
     }
 }

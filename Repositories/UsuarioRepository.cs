@@ -94,13 +94,18 @@ namespace Senai_ProjetoAvanade_webAPI.Repositories
 
         public List<Bicicletario> ListarPontosProxixmos(double Latitude, double Longitude, int metros = 1000)
         {
-            var geometryFactory = NtsGeometryServices.Instance.CreateGeometryFactory();
+            var geometryFactory = NtsGeometryServices.Instance.CreateGeometryFactory(srid: 4326);
             var myLocation = geometryFactory.CreatePoint(new NetTopologySuite.Geometries.Coordinate(Latitude, Longitude));
 
             List<Bicicletario> locais = ctx.Bicicletarios.ToList();
 
             return locais.OrderBy(x => x.Latlong.Distance(myLocation)).Where(x => x.Latlong.IsWithinDistance(myLocation, metros)).ToList();
 
+        }
+
+        public List<Usuario> ListarQuantidadeUsuarios()
+        {
+            return ctx.Usuarios.Select(U => new Usuario() { IdUsuario = U.IdUsuario}).ToList();
         }
 
         public Usuario Login(string email, string senha)
