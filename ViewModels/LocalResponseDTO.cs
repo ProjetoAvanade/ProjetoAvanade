@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Senai_ProjetoAvanade_webAPI.DataTransferObject
+namespace Senai_ProjetoAvanade_webAPI.ViewModels
 {
     public class LocalResponseDTO
     {

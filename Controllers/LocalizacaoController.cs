@@ -6,7 +6,6 @@ using Senai_ProjetoAvanade_webAPI.Interfaces;
 using System;
 using System.Linq;
 using System.Threading;
-using Senai_ProjetoAvanade_webAPI.DataTransferObject;
 
 namespace Senai_ProjetoAvanade_webAPI.Controllers
 {
@@ -32,9 +31,9 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
 
             double sLat1 = Math.Sin(Radians(lat1));
             double sLat2 = Math.Sin(Radians(lat2));
-            double cLat1 = Math.Sin(Radians(lat1));
-            double cLat2 = Math.Sin(Radians(lat2));
-            double cLon = Math.Sin(Radians(lon1) - Radians(lon2));
+            double cLat1 = Math.Cos(Radians(lat1));
+            double cLat2 = Math.Cos(Radians(lat2));
+            double cLon = Math.Cos(Radians(lon1) - Radians(lon2));
 
             double cosD = sLat1 * sLat2 * cLat1 * cLat2 * cLon;
 
@@ -76,8 +75,8 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
                 Numero = local.Numero,
                 Latitude = Convert.ToDouble(local.Latitude),
                 Longitude = Convert.ToDouble(local.Longitude),
-                Distancia = GreatCircleDistance(Convert.ToDouble(local.Latitude), Convert.ToDouble(local.Longitude), request.Latitude, request.Longitude),
-            });
+                Distancia = GreatCircleDistance(Convert.ToDouble(local.Longitude), Convert.ToDouble(local.Latitude), request.Longitude, request.Latitude),
+            }).OrderBy(x => x.Distancia);
 
             return Ok(locaisOrdenadosDistancia);
         }
