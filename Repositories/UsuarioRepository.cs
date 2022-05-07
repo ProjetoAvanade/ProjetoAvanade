@@ -68,6 +68,7 @@ namespace Senai_ProjetoAvanade_webAPI.Repositories
                 Pontos = U.Pontos,
                 Saldo = U.Saldo,
                 Imagem = U.Imagem,
+                Cpf = U.Cpf,
                 IdUsuario = U.IdUsuario,
             })
                 .FirstOrDefault(c => c.IdUsuario == id); 
