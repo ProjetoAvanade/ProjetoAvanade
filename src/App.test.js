@@ -4,6 +4,6 @@ import Login from './pages/login';
 
 test('renders learn react link', () => {
   render(<Login />);
-  const linkElement = screen.getByText(/learn react/i);
+  const linkElement = screen.getByText(/Teste/i);
   expect(linkElement).toBeInTheDocument();
 });
