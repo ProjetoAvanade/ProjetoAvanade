@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import axios from 'axios'
+//import axios from 'axios'
 import { Link } from 'react-router-dom'
 
 import BarChart from '../components/Grafico'
@@ -13,7 +13,7 @@ import icone_amarelo from '../assets/img/amarelo.svg'
 import '../assets/css/PainelADM.css'
 
 export default function PainelADM() {
-    const [userData, setUserData] = useState({
+    const [userData] = useState({
         labels: UserData.map((data) => data.month),
         datasets: [
           {
