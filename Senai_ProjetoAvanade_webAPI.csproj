@@ -28,6 +28,12 @@
     <Folder Include="StaticFiles\imagem\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="StaticFiles\imagem\1559558a-4328-4225-bfca-a25ca1e85d46.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 	<PropertyGroup>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<NoWarn>$(NoWarn);1591</NoWarn>
