@@ -53,4 +53,4 @@ jobs:
           app-name: 'bikecione'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_56B311A463854404982798A1A8CD514C }}
-          package: .
+          package: build
