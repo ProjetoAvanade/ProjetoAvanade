@@ -6,6 +6,7 @@ using Senai_ProjetoAvanade_webAPI.Interfaces;
 using System;
 using System.Linq;
 using System.Threading;
+using System.Globalization;
 
 namespace Senai_ProjetoAvanade_webAPI.Controllers
 {
@@ -35,7 +36,7 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
             double cLat2 = Math.Cos(Radians(lat2));
             double cLon = Math.Cos(Radians(lon1) - Radians(lon2));
 
-            double cosD = sLat1 * sLat2 * cLat1 * cLat2 * cLon;
+            double cosD = sLat1 * sLat2 + cLat1 * cLat2 * cLon;
 
             double d = Math.Acos(cosD);
 
@@ -75,7 +76,7 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
                 Numero = local.Numero,
                 Latitude = Convert.ToDouble(local.Latitude),
                 Longitude = Convert.ToDouble(local.Longitude),
-                Distancia = GreatCircleDistance(Convert.ToDouble(local.Longitude), Convert.ToDouble(local.Latitude), request.Longitude, request.Latitude),
+                Distancia = GreatCircleDistance(double.Parse(local.Longitude, CultureInfo.InvariantCulture), double.Parse(local.Latitude, CultureInfo.InvariantCulture), request.Longitude, request.Latitude),
             }).OrderBy(x => x.Distancia);
 
             return Ok(locaisOrdenadosDistancia);
