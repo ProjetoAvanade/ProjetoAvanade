@@ -51,7 +51,7 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
         /// <param name="request">Argumentos para a requisicao</param>
         /// <param name="cancellationToken"></param>
         /// <returns>Uma lista de pontos do mais proximo pro mais longe</returns>
-        //[Authorize(Roles = "2")]
+        [Authorize(Roles = "2")]
         [HttpGet]
         public IActionResult Listar_Pontos_Proximos([FromQuery]LocalRequestDTO request, CancellationToken cancellationToken)
         {

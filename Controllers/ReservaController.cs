@@ -49,7 +49,7 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
         /// </summary>
         /// <param name="id">Id da reserva a ser atualizada</param>
         /// <param name="ReservaAtualizada">Novas informações</param>
-        //[Authorize(Roles = "2")]
+        [Authorize(Roles = "2")]
         [HttpPut("{id}")]
         public IActionResult Atualizar(int id, reservaViewModel ReservaAtualizada)
         {
@@ -112,24 +112,5 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
                 return BadRequest(ex);
             }
         }
-
-        /// <summary>
-        /// Metodo responsavel pela listagem de lucros do sistema por mes
-        /// </summary>
-        /// <returns>Lista de lucro por mes</returns>
-        //[Authorize(Roles = "1")]
-        //[HttpGet("/lucros")]
-        //public IActionResult Listar_Lucros()
-        //{
-        //    try
-        //    {
-        //        return Ok(_reservaRepository.Listar_Lucros());
-        //    }
-        //    catch (Exception ex)
-        //    {
-
-        //        return BadRequest(ex);
-        //    }
-        //}
     }
 }

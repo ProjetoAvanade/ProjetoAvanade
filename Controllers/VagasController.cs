@@ -44,7 +44,7 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
         /// </summary>
         /// <param name="id">Id da vaga a ser buscada</param>
         /// <param name="status_novo">Novo valor para o status dessa vaga</param>
-        //[Authorize(Roles = "2")]
+        [Authorize(Roles = "2")]
         [HttpPut("{id}")]
         public IActionResult AtualizarStatusVaga(int id, vagasViewModel status_novo)
         {
