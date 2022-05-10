@@ -7,6 +7,7 @@ using System;
 using System.Linq;
 using System.Threading;
 using System.Globalization;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Senai_ProjetoAvanade_webAPI.Controllers
 {
