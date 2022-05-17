@@ -22,7 +22,7 @@ export default class Login extends Component {
         evento.preventDefault();
 
         this.setState({ mensagemErro: '', isLoading: true });
-        axios.post('https://avanade11.azurewebsites.net/api/Login', {
+        axios.post('https://api-avanade.azurewebsites.net/api/login', {
             email: this.state.email,
             senha: this.state.senha
         }).then(resposta => {
@@ -57,34 +57,37 @@ export default class Login extends Component {
         return (
             <div className="container_tela">
                 <div className="banner_login">
-                    <div>
+                    <div className='box_banner'>
                         <img className='logo' src={logo_login} alt="A logo do nosso site" />
                         <div className="box_img">
                             <img src={banner_login} alt="Pessoa andando de bicicleta" />
                         </div>
-                        <span>Teste</span>
+                        <span>© 2022 Avanade</span>
                     </div>
                 </div>
-                <form onSubmit={this.efetuarlogin} className="box_form">
 
-                    <div className="box_inputs">
-
-                        <div className="box_input">
-                            <label for="Email" className="label_input">Email:</label>
-                            <input name="email" type="text" placeholder="Email" className="input_login" value={this.state.email} onChange={this.atualizaStateCampo} />
+                <section className='container_login'>
+                    <div className='box_login'>
+                        <div className='box_titulo'>
+                            <h1 className='Titulo'>Login</h1>
+                            <h2 className='Sub-titulo'>Acesse sua conta e veja a dashboard</h2>
                         </div>
+                        <form onSubmit={this.efetuarlogin} className="box_form">
 
-                        <div className="box_input">
-                            <label for="pass" className="label_input">Senha:</label>
-                            <input name="senha" type="password" placeholder="Senha" className="input_login" value={this.state.senha} onChange={this.atualizaStateCampo} />
-                        </div>
+                            <div className="box_inputs">
 
-                        <span className="Mensagem_erro">{this.state.MensagemErro}</span>
-                        {
-                            this.state.isLoading === true ? <button disabled className="btn_login">Entrando ...</button> : <button type='submit' className="btn_login">Login</button>
-                        }
+                                <input name="email" type="text" placeholder="Email" className="input_login" value={this.state.email} onChange={this.atualizaStateCampo} />
+
+                                <input name="senha" type="password" placeholder="Senha" className="input_login" value={this.state.senha} onChange={this.atualizaStateCampo} />
+
+                                <span className="Mensagem_erro">{this.state.MensagemErro}</span>
+                                {
+                                    this.state.isLoading === true ? <button disabled className="btn_login">Entrando ...</button> : <button type='submit' className="btn_login">Login</button>
+                                }
+                            </div>
+                        </form>
                     </div>
-                </form>
+                </section>
             </div>
         )
     }

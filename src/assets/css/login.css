@@ -1,4 +1,7 @@
 @import url('http://fonts.cdnfonts.com/css/nats');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee&display=swap');
+
 
 * {
     margin    : 0;
@@ -25,21 +28,61 @@
     justify-content: space-around;
 }
 
+.box_banner{
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.container_login{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.box_login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 83%;
+}
+
+.box_titulo{
+    height: 30%;
+    width: 71%;
+}
+
+.Titulo{
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: bold;
+    font-size: 60px;
+}
+
+.Sub-titulo{
+    font-family: 'ABeeZee', sans-serif;
+    font-size: 32px;
+}
+
 .logo{
     height: 74px;
     width: 100px;
 }
 
 .box_img{
-    width: 74%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .box_form{
-    height: 100%;
-    width: 50%;
+    width: 90%;
+    height: 50%;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -52,15 +95,7 @@
     align-items: center;
     justify-content: space-evenly;
     width: 600px;
-    height: 500px;
-    border-radius: 30px;
-    border: 7px solid #F3BC2C;
-}
-
-.box_input{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    height: 100%;
 }
 
 .label_input{
@@ -71,19 +106,18 @@
 
 .input_login{
     height: 60px;
-    width: 500px;
-    background-color: #F3BC2C;
+    width: 428px;
     border-radius: 5px;
     padding-left: 4%;
-    color: #333333;
+    border: 2px solid #F3BC2C;
 }
 
 .btn_login{
-    width: 270px;
-    height: 60px;
+    width: 71.3%;
+    height: 19.2%;
     border-radius: 5px;
     background-color: #F3BC2C;
-    font-size: 25px;
+    font-size: 32px;
     font-family: 'NATS', sans-serif;
     color: #333333;
 }
@@ -95,7 +129,7 @@
 
 /* Cor de fundo do autocomplete */
 .input_login:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 30px #F3BC2C inset;
+    -webkit-box-shadow: 0 0 0 30px #ffffff inset;
 }
 
 /* Cor do texto do autocomplete */

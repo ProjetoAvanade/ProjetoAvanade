@@ -18,7 +18,7 @@ const routing = (
     <div>
       <Routes>
         <Route exact path="/" element={<Login />} /> {/* Login */}
-        <Route path="painelADM" element={<PainelADM />} /> {/* Painel Adiministrativo */}
+        <Route path="/painelADM" element={<PainelADM />} /> {/* Painel Adiministrativo */}
         <Route path="*" element={<NotFound/> } />
       </Routes>
     </div>
