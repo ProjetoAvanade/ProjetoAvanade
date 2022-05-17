@@ -4,6 +4,6 @@ import Login from './pages/login';
 
 test('renders learn react link', () => {
   render(<Login />);
-  const linkElement = screen.getByText(/Teste/i);
+  const linkElement = screen.getByText(/© 2022 Avanade/i);
   expect(linkElement).toBeInTheDocument();
 });
