@@ -112,5 +112,26 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
                 return BadRequest(ex);
             }
         }
+
+        /// <summary>
+        /// Metodo responsavel por atualizar o status de pagamento de uma reserva
+        /// </summary>
+        /// <param name="id">Id da reserva</param>
+        /// <param name="Status_Atualizado">Novo status de pagamento</param>
+        /// <returns></returns>
+        [HttpPut("{id}/status")]
+        public IActionResult Atualizar_Status(int id, statuspagamentoViewModel Status_Atualizado)
+        {
+            try
+            {
+                _reservaRepository.Atualizar_Status(id, Status_Atualizado);
+
+                return StatusCode(204);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex);
+            }
+        }
     }
 }

@@ -72,6 +72,20 @@ namespace Senai_ProjetoAvanade_webAPI.Repositories
             return teste;
         }
 
+        public void Atualizar_Status(int id, statuspagamentoViewModel StatusAtualizada)
+        {
+            Reserva reservabuscada = ctx.Reservas.FirstOrDefault(x => x.IdReserva == id);
+
+            if (reservabuscada != null)
+            {
+                reservabuscada.StatusPagamento = StatusAtualizada.statuspagamento;
+            }
+
+            ctx.Reservas.Update(reservabuscada);
+
+            ctx.SaveChanges();
+        }
+
         public void Cadastrar(reservacadasViewModel novareserva, int id)
         {
 

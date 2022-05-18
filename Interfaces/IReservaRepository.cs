@@ -17,7 +17,7 @@ namespace Senai_ProjetoAvanade_webAPI.Interfaces
         void Cadastrar(reservacadasViewModel novareserva, int id);
 
         /// <summary>
-        /// Metodo responsavel pela atualização de algumas informacoes de um reserva
+        /// Metodo responsavel pela atualização de horario de fechamento da reserva e preco
         /// </summary>
         /// <param name="id">Id da reserva para ser atualizada</param>
         /// <param name="ReservaAtualizada">Novas informacoes da reserva</param>
@@ -38,9 +38,10 @@ namespace Senai_ProjetoAvanade_webAPI.Interfaces
         Usuario AtualizarPontos(int id);
 
         /// <summary>
-        /// Metodo responsavel por listar os lucros da aplicacao
+        /// Metodo responsavel por atualizar o status de pagamento de uma reserva
         /// </summary>
-        /// <returns>Uma lista de reservas</returns>
-        //dadosgraficoViewModel Listar_Lucros();
+        /// <param name="id">Id da reserva a ser buscada</param>
+        /// <param name="StatusAtualizada">Novo status de pagamento</param>
+        void Atualizar_Status(int id, statuspagamentoViewModel StatusAtualizada);
     }
 }
