@@ -7,6 +7,8 @@ using Senai_ProjetoAvanade_webAPI.ViewModels;
 using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Senai_ProjetoAvanade_webAPI.Controllers
 {
@@ -132,6 +134,17 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
             {
                 return BadRequest(ex);
             }
+        }
+
+        [HttpPost("/teste")]
+        public async Task<IActionResult> Post([FromBody] object request, CancellationToken cancellationToken)
+        {
+
+            return Ok(new
+            {
+                teste = "teste"
+            });
+
         }
     }
 }

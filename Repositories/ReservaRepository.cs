@@ -106,6 +106,9 @@ namespace Senai_ProjetoAvanade_webAPI.Repositories
                 .Select(c => new Reserva() { 
                 IdReserva = c.IdReserva,
                 IdUsuario = c.IdUsuario,
+                AbreTrava = c.AbreTrava,
+                FechaTrava = c.FechaTrava,
+                Preco = c.Preco,
                 IdUsuarioNavigation = new Usuario()
                 {
                     NomeUsuario = c.IdUsuarioNavigation.NomeUsuario,
