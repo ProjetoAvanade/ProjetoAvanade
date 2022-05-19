@@ -22,7 +22,7 @@ export default class Login extends Component {
         evento.preventDefault();
 
         this.setState({ mensagemErro: '', isLoading: true });
-        axios.post('https://api-avanade.azurewebsites.net/api/login', {
+        axios.post('https://bikecione.azurefd.net/api/login', {
             email: this.state.email,
             senha: this.state.senha
         }).then(resposta => {

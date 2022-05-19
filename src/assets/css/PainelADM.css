@@ -26,18 +26,20 @@
     align-items: baseline;
     justify-content: space-around;
     height: 15%;
-    width: 42%;
+    width: 60%;
 }
 
 .box_campo{
-    width: 100%;
+    width: 90%;
+    height: 40%;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
 .box_perfil{
-    width: 69%;
+    width: 72%;
+    height: 40%;
     display: flex;
     justify-content: space-around;
     align-items: center;

@@ -17,9 +17,9 @@ import '../assets/css/PainelADM.css'
 
 
 export default function PainelADM() {
-    const [NomeUsuario, setNomeUsuario ] = useState("")
+    const [NomeUsuario, setNomeUsuario] = useState("")
     const [cpf, setCpf] = useState("")
-    const [Email , setEmail] = useState("")
+    const [Email, setEmail] = useState("")
     const [DataNascimento, setDataNascimento] = useState(Date.now);
 
     function BuscarUsuario() {
@@ -40,17 +40,29 @@ export default function PainelADM() {
 
 
     function atualizar_conteudo() {
-        var x = document.getElementById("teste");
-        var y = document.getElementById("teste_perfil");
-        x.style.display = "block";
-        y.style.display = "none"
+        var conteudo = document.getElementById("teste");
+        var conteudo_perfil = document.getElementById("teste_perfil");
+        var menu_dash = document.getElementById("menu_dash");
+        var menu_perfil = document.getElementById("menu_perfil");
+        conteudo.style.display = "block";
+        conteudo_perfil.style.display = "none"
+        if (conteudo.style.display === "block") {
+            menu_dash.style.backgroundColor = "#F8F9FD"
+            menu_perfil.style.backgroundColor = "#F2F2F2"
+        }
     }
-    
+
     function atualizar_conteudo_perfil() {
-        var x = document.getElementById("teste");
-        var y = document.getElementById("teste_perfil");
-        x.style.display = "none";
-        y.style.display = "block"
+        var conteudo = document.getElementById("teste");
+        var conteudo_perfil = document.getElementById("teste_perfil");
+        var menu_dash = document.getElementById("menu_dash");
+        var menu_perfil = document.getElementById("menu_perfil");
+        conteudo.style.display = "none";
+        conteudo_perfil.style.display = "block"
+        if (conteudo_perfil.style.display === "block") {
+            menu_dash.style.backgroundColor = "#F2F2F2"
+            menu_perfil.style.backgroundColor = "#F8F9FD"
+        }
     }
 
     useEffect(BuscarUsuario(), []);
@@ -61,11 +73,11 @@ export default function PainelADM() {
                 <img src={logo_login} alt="Logo do Bikecione" className='logo' />
 
                 <div className='box_secoes'>
-                    <div className='box_campo' onClick={() => atualizar_conteudo()}>
+                    <div className='box_campo' onClick={() => atualizar_conteudo()} id="menu_dash">
                         <img src={icon_dashboard} alt="Imagem para a tela de dashboard" />
                         <span>Dashboard</span>
                     </div>
-                    <div className='box_perfil' onClick={() => atualizar_conteudo_perfil()}>
+                    <div className='box_perfil' onClick={() => atualizar_conteudo_perfil()} id="menu_perfil">
                         <img src={icon_perfil} alt="Imagem para a tela de perfil" />
                         <span>Perfil</span>
                     </div>
@@ -94,9 +106,9 @@ export default function PainelADM() {
                 <div className='cabecalho'>
                     <h1 className='titulo'>Perfil</h1>
                 </div>
-                
+
                 <section className='container_perfil'>
-                    <img src={img_perfil} alt="Foto de Perfil do usuario" className='img_user'/>
+                    <img src={img_perfil} alt="Foto de Perfil do usuario" className='img_user' />
                     <div className='box_info_usuarios'>
                         <span>{NomeUsuario}</span>
                         <span>{cpf}</span>
