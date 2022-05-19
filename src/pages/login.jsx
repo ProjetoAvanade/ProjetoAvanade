@@ -20,13 +20,12 @@ export default class Login extends Component {
 
     efetuarlogin = (evento) => {
         evento.preventDefault();
-
         this.setState({ mensagemErro: '', isLoading: true });
-        axios.post('https://bikecione.azurefd.net/api/login', {
+        axios.post('https://api-avanade.azurewebsites.net/api/login', {
             email: this.state.email,
             senha: this.state.senha
         }).then(resposta => {
-            if (resposta.status === 200) {
+            if (resposta.status === 201) {
                 localStorage.setItem('usuario-login', resposta.data.token);
                 this.setState({ isLoading: false })
                 switch (parsejwt().role) {

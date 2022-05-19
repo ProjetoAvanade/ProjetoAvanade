@@ -17,10 +17,10 @@ import '../assets/css/PainelADM.css'
 
 
 export default function PainelADM() {
-    const [NomeUsuario, setNomeUsuario] = useState("")
+    const [nomeUsuario, setNomeUsuario] = useState("")
     const [cpf, setCpf] = useState("")
-    const [Email, setEmail] = useState("")
-    const [DataNascimento, setDataNascimento] = useState(Date.now);
+    const [email, setEmail] = useState("")
+    const [dataNascimento, setDataNascimento] = useState(Date.now);
 
     function BuscarUsuario() {
         axios('https://api-avanade.azurewebsites.net/api/Usuario', {
@@ -30,10 +30,10 @@ export default function PainelADM() {
         }).then((resposta) => {
             if (resposta.status === 200) {
                 console.log(resposta.data)
-                setNomeUsuario(resposta.data.NomeUsuario)
-                setCpf(resposta.data.Cpf)
-                setEmail(resposta.data.Email)
-                setDataNascimento(resposta.data.DataNascimento)
+                setNomeUsuario(resposta.data.nomeUsuario)
+                setCpf(resposta.data.cpf)
+                setEmail(resposta.data.email)
+                setDataNascimento(resposta.data.dataNascimento)
             }
         }).catch(erro => console.log(erro))
     }
@@ -65,7 +65,7 @@ export default function PainelADM() {
         }
     }
 
-    useEffect(BuscarUsuario(), []);
+    useEffect(BuscarUsuario, []);
 
     return (
         <div className='Container_tela'>
@@ -84,7 +84,7 @@ export default function PainelADM() {
                 </div>
 
                 <div className='box_link'>
-                    <Link to='/' className='box_sair'>
+                    <Link to='/' className='box_sair' onClick={() => localStorage.removeItem('usuario-login')}>
                         <img src={icon_sair} alt="Imagem para sair da aplicação" />
                         <span>Sair</span>
                     </Link>
@@ -110,15 +110,19 @@ export default function PainelADM() {
                 <section className='container_perfil'>
                     <img src={img_perfil} alt="Foto de Perfil do usuario" className='img_user' />
                     <div className='box_info_usuarios'>
-                        <span>{NomeUsuario}</span>
+                        <span>{nomeUsuario}</span>
                         <span>{cpf}</span>
                         <div className='box_icon'>
                             <img src={icon_email} alt="Icone de Email" />
-                            <span>{Email}</span>
+                            <span>{email}</span>
                         </div>
                         <div className='box_icon_bolo'>
                             <img src={icon_bolo} alt="Icone de Aniversario" />
-                            <span>{DataNascimento}</span>
+                            <span>{Intl.DateTimeFormat("pt-BR", {
+                                year: 'numeric', month: 'numeric', day: 'numeric',
+                                hour: 'numeric', minute: 'numeric',
+                                hour12: false
+                            }).format(new Date(dataNascimento))}</span>
                         </div>
                     </div>
                 </section>

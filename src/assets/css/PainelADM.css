@@ -118,14 +118,14 @@
 }
 
 .box_icon{
-    width: 100%;
+    width: 84%;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
 .box_icon_bolo{
-    width: 65%;
+    width: 88%;
     display: flex;
     align-items: center;
     justify-content: space-between;
