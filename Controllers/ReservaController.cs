@@ -51,13 +51,13 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
         /// </summary>
         /// <param name="id">Id da reserva a ser atualizada</param>
         /// <param name="ReservaAtualizada">Novas informações</param>
-        //[Authorize(Roles = "2")]
+        [Authorize(Roles = "2")]
         [HttpPut("{id}")]
         public IActionResult Atualizar(int id, reservaViewModel ReservaAtualizada)
         {
             try
             {
-                int idUsuario = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
+                //int idUsuario = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
                 _reservaRepository.Atualizar(id, ReservaAtualizada);
 
                 return StatusCode(204);
