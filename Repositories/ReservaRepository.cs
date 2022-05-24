@@ -28,6 +28,8 @@ namespace Senai_ProjetoAvanade_webAPI.Repositories
         {
             Reserva reservaBuscada = ctx.Reservas.FirstOrDefault(c => c.IdReserva == id);
 
+            Usuario usuario = ctx.Usuarios.FirstOrDefault(x => x.IdUsuario == id);
+
             if (reservaBuscada != null)
             {
                 reservaBuscada.FechaTrava = DateTime.Now;
@@ -37,7 +39,7 @@ namespace Senai_ProjetoAvanade_webAPI.Repositories
                 //double diferenca = Convert.ToDouble(Diff_dates);
 
 
-                reservaBuscada.Preco = Convert.ToDecimal(Diff_dates.TotalMinutes * 0.0625);
+                reservaBuscada.Preco = Convert.ToDecimal(Diff_dates.TotalMinutes * 0.0625) - usuario.Saldo;
                 //reservaBuscada.Preco = ReservaAtualizada.Preco;
                 //reservaBuscada.StatusPagamento = ReservaAtualizada.StatusPagamento;
             }
