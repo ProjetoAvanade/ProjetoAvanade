@@ -15,28 +15,86 @@ Consulte **Implantação** para saber como implantar o projeto.
 
 De que coisas você precisa para instalar o software e como instalá-lo?
 
-```
-Dar exemplos
-```
+Você irá precisar dos seguintes itens instalados e configurados em sua máquina para estar testando localmente:
+###
+--- Postman - testar as requisições da API
+###
+--- SSMS - SQL Server usado para criar o banco de dados
+###
+--- Visual Studio 2019 - usado para codar em C# e rodar a aplicação
+###
+### Pacotes necessários para implementação de APIs:
+###
+ System.Data.SqlClient 
+	- permite a conexão com o banco de dados quando fazemos manualmente
+###
+ System.IdentityModel.Tokens.Jwt
+	- criar e validar o JWT
+###
+ Microsoft.AspNetCore.Authentication.JwtBearer 
+	- integrar a parte de autenticação JWT Bearer
+###
+ Swashbuckle.AspNetCore 
+	- permite a integração com Swagger
+###
+ Microsoft.EntityFrameworkCore.SqlServer 
+###
+ Microsoft.EntityFrameworkCore.SqlServer.Design
+###
+  Microsoft.EntityFrameworkCore.Tools
+  - Essa e as duas anteriores nos permitem trabalhar com EF Core
+###
+  Microsoft.AspNetCore.Mvc.NewtonsoftJson 
+	- Permite formatações do JSON 
+    
+
 
 ### 🔧 Instalação
 
-Uma série de exemplos passo-a-passo que informam o que você deve executar para ter um ambiente de desenvolvimento em execução.
+Para começar, forque o repositório para que você possa modificar e subir alterações na sua versão;
+![forcar-projeto](https://user-images.githubusercontent.com/61885997/169832596-98880b82-b719-4090-96ed-ab418e76bdfe.PNG)
+###
 
-Diga como essa etapa será:
 
-```
-Dar exemplos
-```
+Dentro do projeto forcado na sua conta, copie o link do projeto
+![clonar-repositorio PNG](https://user-images.githubusercontent.com/61885997/169836248-5f5aef49-4af1-4f09-a87e-92ac4d975acc.png)
 
-E repita:
+Clone ele para sua aréa de trabalho usando o git bash com o comando git clone -link-clonado-
+![abrir-gitbash](https://user-images.githubusercontent.com/61885997/169836686-60690659-9ca3-4d73-9ab1-8a385bced092.png)
+![comando-clonar](https://user-images.githubusercontent.com/61885997/169836842-ef3b9698-6556-4ec1-9aff-1515454fdbdd.png)
 
-```
-Até finalizar
-```
+Após ter clonado o repositório, abra o banco de dados
 
-Termine com um exemplo de como obter dados do sistema ou como usá-los para uma pequena demonstração.
+![Abra-o-banco](https://user-images.githubusercontent.com/61885997/169837276-ed687aa0-8f41-4477-a569-8527083c0bbe.png)
 
+
+para conseguir achar e colar os scripts, com o git bash novamente dentro da pasta clonada, vá para a branch de BancodeDados com o    
+git checkout -branch-
+![git-checkout](https://user-images.githubusercontent.com/61885997/169837546-3cdeaa57-3aa0-457f-bc31-198c5bac5947.png)
+![dentro-db](https://user-images.githubusercontent.com/61885997/169838493-329d3841-ed60-423f-a896-bda7666b2464.png)
+
+Vá em scripts   
+
+
+![clique-em-scripts](https://user-images.githubusercontent.com/61885997/169838578-66651f61-0ce6-48fb-8882-dd9cf0a1dd74.png)
+![scripts-do-banco](https://user-images.githubusercontent.com/61885997/169838982-0aa8c7df-4146-4950-a543-f5b34d367b9a.png)
+
+Entre no SSMS e logue com suas credenciais criadas
+![logar-ssms](https://user-images.githubusercontent.com/61885997/169838854-b8c5ecc9-9a31-4a2e-8e35-aa7d81a5a995.png)
+
+jogue os scripts dentro do SSMS   
+
+
+![cole-os-scripts](https://user-images.githubusercontent.com/61885997/169839290-757b558e-d88f-4aea-b9a9-ce38f5af8cdd.png)
+
+
+
+-----criarobanco-continuar-daq
+
+
+
+
+  
 ## ⚙️ Executando os testes
 
 Explicar como executar os testes automatizados para este sistema.
