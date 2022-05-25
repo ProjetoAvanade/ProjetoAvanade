@@ -2,8 +2,6 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 
-import { UserData } from '../teste'
-
 import logo_login from '../assets/img/logo-login.svg'
 import icon_dashboard from '../assets/img/dashboard.svg'
 import icon_perfil from '../assets/img/perfil.svg'
@@ -66,6 +64,8 @@ export default function PainelADM() {
     }
 
     useEffect(BuscarUsuario, []);
+    useEffect(atualizar_conteudo, []);
+    useEffect(atualizar_conteudo_perfil, []);
 
     return (
         <div className='Container_tela'>
@@ -97,8 +97,12 @@ export default function PainelADM() {
                 </div>
 
                 <section className='container_graficos'>
-                    <div className='grafico'></div>
-                    <div className='grafico'></div>
+                    <div className='grafico'>
+                    <iframe title="Teste que funciona" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiYjg3OTU3YTQtYTc5Ny00NmVkLWFjMGUtOGRlZDk5Y2M3MGE0IiwidCI6ImIxMDUxYzRiLTNiOTQtNDFhYi05NDQxLWU3M2E3MjM0MmZkZCJ9&pageName=ReportSection" frameborder="0" allowFullScreen="true"></iframe>
+                    </div>
+                    <div className='grafico'>
+                    <iframe title="Teste que funciona" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiYjg3OTU3YTQtYTc5Ny00NmVkLWFjMGUtOGRlZDk5Y2M3MGE0IiwidCI6ImIxMDUxYzRiLTNiOTQtNDFhYi05NDQxLWU3M2E3MjM0MmZkZCJ9&pageName=ReportSectioncbd80f73691211eddb57" frameborder="0" allowFullScreen="true"></iframe>
+                    </div>
                 </section>
             </section>
 
