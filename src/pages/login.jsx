@@ -1,13 +1,14 @@
 import axios from 'axios';
 import React, { Component } from 'react';
 import { parsejwt } from '../services/Auth';
-
 import banner_login from '../assets/img/banner_login.svg'
 import logo_login from '../assets/img/logo-login.svg'
 
 import '../assets/css/login.css'
 
+
 export default class Login extends Component {
+
     constructor(props) {
         super(props)
         this.state = {
@@ -31,7 +32,6 @@ export default class Login extends Component {
                 switch (parsejwt().role) {
                     case '1':
                         window.location.href = "../painelADM"
-                        //<Navigate to="/JSHDKJAF" replace />
                         break;
                     default:
                         console.log('nn vai')
