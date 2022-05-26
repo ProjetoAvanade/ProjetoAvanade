@@ -122,6 +122,7 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
         /// <param name="id">Id da reserva</param>
         /// <param name="Status_Atualizado">Novo status de pagamento</param>
         /// <returns></returns>
+        [Authorize(Roles = "2")]
         [HttpPut("{id}/status")]
         public IActionResult Atualizar_Status(int id, statuspagamentoViewModel Status_Atualizado)
         {
@@ -135,17 +136,6 @@ namespace Senai_ProjetoAvanade_webAPI.Controllers
             {
                 return BadRequest(ex);
             }
-        }
-
-        [HttpPost("/teste")]
-        public async Task<IActionResult> Post([FromBody] object request, CancellationToken cancellationToken)
-        {
-
-            return Ok(new
-            {
-                teste = "teste"
-            });
-
         }
     }
 }
