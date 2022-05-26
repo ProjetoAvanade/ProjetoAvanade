@@ -27,7 +27,6 @@ export default function PainelADM() {
             }
         }).then((resposta) => {
             if (resposta.status === 200) {
-                console.log(resposta.data)
                 setNomeUsuario(resposta.data.nomeUsuario)
                 setCpf(resposta.data.cpf)
                 setEmail(resposta.data.email)
@@ -98,10 +97,10 @@ export default function PainelADM() {
 
                 <section className='container_graficos'>
                     <div className='grafico'>
-                    <iframe title="Teste que funciona" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiYjg3OTU3YTQtYTc5Ny00NmVkLWFjMGUtOGRlZDk5Y2M3MGE0IiwidCI6ImIxMDUxYzRiLTNiOTQtNDFhYi05NDQxLWU3M2E3MjM0MmZkZCJ9&pageName=ReportSection" frameborder="0" allowFullScreen="true"></iframe>
+                    <iframe title="Lucros mensais" className='grafico1' src="https://app.powerbi.com/view?r=eyJrIjoiYjg3OTU3YTQtYTc5Ny00NmVkLWFjMGUtOGRlZDk5Y2M3MGE0IiwidCI6ImIxMDUxYzRiLTNiOTQtNDFhYi05NDQxLWU3M2E3MjM0MmZkZCJ9&pageName=ReportSection" frameborder="0" allowFullScreen={true}></iframe>
                     </div>
                     <div className='grafico'>
-                    <iframe title="Teste que funciona" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiYjg3OTU3YTQtYTc5Ny00NmVkLWFjMGUtOGRlZDk5Y2M3MGE0IiwidCI6ImIxMDUxYzRiLTNiOTQtNDFhYi05NDQxLWU3M2E3MjM0MmZkZCJ9&pageName=ReportSectioncbd80f73691211eddb57" frameborder="0" allowFullScreen="true"></iframe>
+                    <iframe title="Reservas por Trimestre" className='grafico1' src="https://app.powerbi.com/view?r=eyJrIjoiYjg3OTU3YTQtYTc5Ny00NmVkLWFjMGUtOGRlZDk5Y2M3MGE0IiwidCI6ImIxMDUxYzRiLTNiOTQtNDFhYi05NDQxLWU3M2E3MjM0MmZkZCJ9&pageName=ReportSectioncbd80f73691211eddb57" frameborder="0" allowFullScreen={true}></iframe>
                     </div>
                 </section>
             </section>

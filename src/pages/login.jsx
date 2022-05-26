@@ -30,7 +30,8 @@ export default class Login extends Component {
                 this.setState({ isLoading: false })
                 switch (parsejwt().role) {
                     case '1':
-                        window.location.href = "/painelADM"
+                        window.location.href = "../painelADM"
+                        //<Navigate to="/JSHDKJAF" replace />
                         break;
                     default:
                         console.log('nn vai')
