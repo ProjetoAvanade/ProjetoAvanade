@@ -74,18 +74,18 @@ export default function PainelADM() {
                 <div className='box_secoes'>
                     <div className='box_campo' onClick={() => atualizar_conteudo()} id="menu_dash">
                         <img src={icon_dashboard} alt="Imagem para a tela de dashboard" />
-                        <span>Dashboard</span>
+                        <span className='nome_secao'>Dashboard</span>
                     </div>
                     <div className='box_perfil' onClick={() => atualizar_conteudo_perfil()} id="menu_perfil">
                         <img src={icon_perfil} alt="Imagem para a tela de perfil" />
-                        <span>Perfil</span>
+                        <span className='nome_secao'>Perfil</span>
                     </div>
                 </div>
 
                 <div className='box_link'>
                     <Link to='/' className='box_sair' onClick={() => localStorage.removeItem('usuario-login')}>
                         <img src={icon_sair} alt="Imagem para sair da aplicação" />
-                        <span>Sair</span>
+                        <span className='nome_secao'>Sair</span>
                     </Link>
                 </div>
             </section>
@@ -113,15 +113,15 @@ export default function PainelADM() {
                 <section className='container_perfil'>
                     <img src={img_perfil} alt="Foto de Perfil do usuario" className='img_user' />
                     <div className='box_info_usuarios'>
-                        <span>{nomeUsuario}</span>
-                        <span>{cpf}</span>
+                        <span className='info_user'>{nomeUsuario}</span>
+                        <span className='info_user'>{cpf}</span>
                         <div className='box_icon'>
-                            <img src={icon_email} alt="Icone de Email" />
-                            <span>{email}</span>
+                            <img className='icon' src={icon_email} alt="Icone de Email" />
+                            <span className='info_user'>{email}</span>
                         </div>
                         <div className='box_icon_bolo'>
-                            <img src={icon_bolo} alt="Icone de Aniversario" />
-                            <span>{Intl.DateTimeFormat("pt-BR", {
+                            <img className='icon' src={icon_bolo} alt="Icone de Aniversario" />
+                            <span className='info_user'>{Intl.DateTimeFormat("pt-BR", {
                                 year: 'numeric', month: 'numeric', day: 'numeric',
                                 hour: 'numeric', minute: 'numeric',
                                 hour12: false
