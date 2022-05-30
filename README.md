@@ -89,8 +89,118 @@ jogue os scripts dentro do SSMS
 
 
 
------criarobanco-continuar-daq
+selecione os comandos e execute para estar criando o banco de dados
 
+
+![criar-o-banco](https://user-images.githubusercontent.com/61885997/170983296-8a310857-d349-4204-af17-4958d98c23ff.png)
+
+
+
+
+selecione o comando "USE AVANADE GO" e execute ou vá manualmente para selecionar o banco
+
+
+
+![selecionar-o-banco](https://user-images.githubusercontent.com/61885997/170983469-a2c420f3-5721-44f6-ab1b-587a1e27d4c7.png)
+
+
+
+primeiro com DDL, selecione todo o script e execute
+
+
+
+![selecione-e-execute1](https://user-images.githubusercontent.com/61885997/170983985-36bfe4a6-7dec-4ea7-9317-2f245ef8577a.png)
+
+
+
+o retorno esperado é esse (as tabelas apareceram pelo "SELECT * FROM 'tabela' ")
+
+
+
+![retorno1](https://user-images.githubusercontent.com/61885997/170984055-6d12cd11-5ff5-402a-bfd8-5c9169df746c.png)
+
+
+
+para inserir os dados, repita os mesmos passos
+
+
+
+![selecione-e-execute2](https://user-images.githubusercontent.com/61885997/170985694-badbad18-f709-4c41-8478-dbb2fb02a727.png)
+
+
+
+e o retorno esperado é igual ao primeiro
+
+
+
+![retorno2](https://user-images.githubusercontent.com/61885997/170985858-18e175f5-78af-4f82-b28f-a28bc3b5d8e8.png)
+
+
+
+esse é para a visualização no momento.. repita os mesmos passos para obter o mesmo retorno, se tudo tiver ocorrido como o esperado;
+
+
+
+![selecione-e-execute3-e-retorno3](https://user-images.githubusercontent.com/61885997/170986255-aa25b19c-4667-4ca9-90b0-444eb12e0230.png)
+
+
+
+No git bash, volte para a main utilizando o git checkout
+
+
+
+![voltar-main](https://user-images.githubusercontent.com/61885997/170986474-c9b344e0-7ed7-422c-bd93-5e53743354e5.png)
+
+
+
+abra a solução, que no caso é a API
+
+
+
+![abrir-solucao](https://user-images.githubusercontent.com/61885997/170986599-edf98687-b275-446b-b046-5452a10d807d.png)
+
+
+
+com os pacotes necessários falados lá no começo do tutorial (é aqui dentro do Nuget para realizar isso)
+
+
+
+![nuget](https://user-images.githubusercontent.com/61885997/170987315-6be99c4a-55ea-4c7f-9d40-874ed5a85947.png)
+
+
+ 
+quando tudo carregar, entre aqui para mudar a string de conexão para conectar com o banco de dados
+
+
+
+![ir-em-appsettings](https://user-images.githubusercontent.com/61885997/170986864-1053f009-e98a-4bcf-b218-ef5a84f4f1c3.png)
+
+
+
+troque a string para a sua
+
+
+![trocar-string](https://user-images.githubusercontent.com/61885997/170986919-b7c0173f-a35d-4cdf-9da0-6e1c731987e5.png)
+
+
+
+clique na setinha para mostrar mais um appsettings para alterar a string de conexão também
+
+
+
+![appsettings-2](https://user-images.githubusercontent.com/61885997/170986982-cbb57b63-7f1f-4745-b639-bfb40f6ed5d3.png)
+
+
+
+execute a API e com isso irá abrir o swagger
+
+
+
+![executa-api](https://user-images.githubusercontent.com/61885997/170988043-b4bdd7af-ed5d-45ec-af42-6df9a4dd61a7.png)
+
+
+
+![swagger](https://user-images.githubusercontent.com/61885997/170988084-73310331-f74f-480f-9873-0f454bf054fc.png)
 
 
 
