@@ -207,27 +207,30 @@ execute a API e com isso irá abrir o swagger
   
 ## ⚙️ Executando os testes
 
-Explicar como executar os testes automatizados para este sistema.
+Para fazer um teste e ver se tudo está certinho, abra o postman
 
-### 🔩 Analise os testes de ponta a ponta
 
-Explique que eles verificam esses testes e porquê.
 
-```
-Dar exemplos
-```
+![abra-postman](https://user-images.githubusercontent.com/61885997/170998758-e1debb9e-182f-4e77-b6ff-5da942d2ee71.png)
 
-### ⌨️ E testes de estilo de codificação
 
-Explique que eles verificam esses testes e porquê.
 
-```
-Dar exemplos
-```
+após abrir e logar no postman, para testar, faça uma requisição de login (POST), vá no header depois de ter feito a requisição para ver e pegar o token
 
-## 📦 Desenvolvimento
 
-Adicione notas adicionais sobre como implantar isso em um sistema ativo
+
+![logar-post](https://user-images.githubusercontent.com/61885997/170998828-6a2a7a59-f39d-4575-b246-a89a03717be4.png)
+
+
+
+o login ira retornar um token, copie ele e faça um get, utilizando o token conforme na imagem, e se tudo estiver certo, terá o retorno 200(OK)
+
+
+
+![token](https://user-images.githubusercontent.com/61885997/170999051-467845b8-2aca-479e-9921-0ec850f4bdb1.png)
+
+
+
 
 ## 🛠️ Construído com
 
