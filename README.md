@@ -149,7 +149,8 @@ No git bash, volte para a main utilizando o git checkout
 
 
 
-![voltar-main](https://user-images.githubusercontent.com/61885997/170986474-c9b344e0-7ed7-422c-bd93-5e53743354e5.png)
+![voltar-main](https://user-images.githubusercontent.com/61885997/171002956-9adc4c8f-5da8-491c-9c59-c04042a23ecc.png)
+
 
 
 
