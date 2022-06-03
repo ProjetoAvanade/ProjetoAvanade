@@ -255,16 +255,13 @@ Nós usamos [SemVer](http://semver.org/) para controle de versão. Para as vers�
 
 ## ✒️ Autores
 
-Mencione todos aqueles que ajudaram a levantar o projeto desde o seu início
+* **Colin Lucas** - [Git](https://github.com/Aberreition0) - [Linkedin](https://www.linkedin.com/in/colin-lucas-batista-beluco-22b007235/)
+* **Gustavo Henrique** - [Git](https://github.com/GustavoHenriqueFerreira) - [Linkedin](https://www.linkedin.com/in/gustavo-henrique-b206a621b/)
+* **Leonardo Souza** - [Git](https://github.com/Leonardo-Souza-de-Castro) - [Linkedin](https://www.linkedin.com/in/leonardo-souza-25b33021b/)
+* **Luiz Felipe** - [Git](https://github.com/luizfelipeveracruz) - [Linkedin](https://www.linkedin.com/in/luiz-felipe-vera-cruz-a6b1a8187/)
+* **Yuri Chiba** - [Git](https://github.com/chibobinho) - [Linkedin](https://www.linkedin.com/in/yuri-chiba-850897229/)
 
-* **Um desenvolvedor** - *Trabalho Inicial* - [umdesenvolvedor](https://github.com/linkParaPerfil)
-* **Fulano De Tal** - *Documentação* - [fulanodetal](https://github.com/linkParaPerfil)
 
-Você também pode ver a lista de todos os [colaboradores](https://github.com/usuario/projeto/colaboradores) que participaram deste projeto.
-
-## 📄 Licença
-
-Este projeto está sob a licença (sua licença) - veja o arquivo [LICENSE.md](https://github.com/usuario/projeto/licenca) para detalhes.
 
 ## 🎁
 
