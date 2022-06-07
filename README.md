@@ -233,7 +233,7 @@ o login ira retornar um token, copie ele e faça um get, utilizando o token conf
 
 
 
-## 🛠️ Construído com
+## 🛠️ Todo o projeto BIKECIONE foi construído com;
 
 <div style="display: inline_block"><br>
   <img align="center" alt="avanade-HTML" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/html5/html5-original.svg">
@@ -241,7 +241,8 @@ o login ira retornar um token, copie ele e faça um get, utilizando o token conf
   <img align="center" alt="avanade-Csharp" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/csharp/csharp-original.svg">
   <img align="center" alt="avanade-js" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/javascript/javascript-original.svg">
   <img align="center" alt="avanade-expo" height="30" width="40" src="https://www.diverseagency.it/static/images/expo.png">
-  
+  <img align='center' alt="avanade-azure" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" />
+          
   ###
 
 
